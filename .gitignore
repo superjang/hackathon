@@ -1,0 +1,8 @@
+# Etc
+app/.sass-cache
+
+# Floters
+node_modules/
+
+# Build Files
+app/build/
