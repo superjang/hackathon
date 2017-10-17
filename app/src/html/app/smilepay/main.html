@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@@smilepay 입니다.</title>
-</head>
-<body>
-    <p>파일명 : @@file</p>
-    <p>경로 : @@path</p>
+@@include(smilepay/common/head.html)
+<body id="app__id--smilepay" class="page__main">
     @@include(smilepay/common/header.html)
-    <h1>include asd asdfasdf 장재원 ㅋㅋ</h1>
+
+    <section id="app__content">
+        <div class="intro__graphic">
+            그래픽
+        </div>
+        <p>파일명 : @@path@@file</p>
+        <img src="../../../image/test.jpg" alt="">
+        @@include(smilepay/share_sns.html)
+    </section>
+
+    @@include(smilepay/common/footer.html)
 </body>
 </html>

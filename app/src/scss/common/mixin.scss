@@ -54,7 +54,7 @@
     vertical-align: top;
 }
 
-@mixin clear{
+@mixin clearfix{
     display: table;
     clear: both;
     content: "";
