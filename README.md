@@ -1,11 +1,14 @@
 # __SmileLinker__
 해커톤 UI개발을 위한 프론트 테스크 자동화 툴입니다.
 
+
 ## Usage
-1. git clone 명령을 통해 해당 저장소를 작업자 PC에 clone 합니다.
-2. 저장소 내 `./app` 폴더로 이동합니다.
-3. gulp task 처리에 필요한 module을 다운로드 합니다. (__Installation__ 참고)
-4. build 명령어를 통해 gulp를 실행시킵니다. (__Build__ 참고)
+1. ruby를 설치합니다.([v2.4.2 64bit download](https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.2-2/rubyinstaller-2.4.2-2-x64.exe))
+2. node를 설치합니다.([v8.7.0 64bit download](https://nodejs.org/dist/v8.7.0/node-v8.7.0-x64.msi))
+3. git clone 명령을 통해 해당 저장소를 작업자 PC에 clone 합니다.
+4. 저장소 내 `./app` 폴더로 이동합니다.
+5. gulp task 처리에 필요한 module을 다운로드 합니다. (__Installation__ 참고)
+6. build 명령어를 통해 gulp를 실행시킵니다. (__Build__ 참고)
 
 ## Installation
 아래 명령어 입력하여 task 처리에 필요한 node module을 다운로드 합니다.
