@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const browserSync = require('browser-sync').create();
 const del = require('del');
 const watch = require('gulp-watch');
 const batch = require('gulp-batch');
@@ -6,14 +7,34 @@ const include = require('gulp-replace-include');
 const sass = require('gulp-ruby-sass');
 const sourcemaps = require('gulp-sourcemaps');
 
+const path = {
+    src: {
+        root: 'src'
+        ,html: 'src\/html\/**\/*.html'
+        ,style: 'src\/scss\/**\/*.scss'
+        ,image: 'src\/image\/independence\/**'
+    },
+    build: {
+        root: 'build'
+        ,html: 'build\/html'
+        ,style: 'build\/css'
+        ,image: 'build\/image\/independence\/'
+    }
+};
+
 gulp.task('clean', () =>
-    del(['build']).then(paths => {
-        console.log('Delete Target:\n', paths.join('\n'));
+    del([path.build.root]).then(paths => {
+        console.log('Deleted Target =>\n', paths.join('\n') + '\\');
     })
 );
 
+gulp.task('copy', () =>
+    gulp.src(path.src.image)
+        .pipe(gulp.dest(path.build.image))
+);
+
 gulp.task('html', function(){
-  return gulp.src('src\/html\/**\/*.html')
+  return gulp.src(path.src.html)
     .pipe(include({
         src: 'src\/html\/app'
         ,include: ['src\/html\/include\/']
@@ -22,11 +43,12 @@ gulp.task('html', function(){
             'smilepay': '장재원'
         }
     }))
-    .pipe(gulp.dest('build\/html'))
+    .pipe(gulp.dest(path.build.html))
+    .pipe(browserSync.reload({ stream : true }))
 });
 
 gulp.task('sass', () =>
-    sass('src\/scss\/**\/*.scss',{
+    sass(path.src.style,{
         sourcemap: true
     })
     // .pipe('src\/scss\/**\/*.scss')
@@ -35,18 +57,41 @@ gulp.task('sass', () =>
         includeContent: false,
         sourceRoot: 'src\/scss'
     }))
-    .pipe(gulp.dest('build\/css'))
+    .pipe(gulp.dest(path.build.style))
+    .pipe(browserSync.reload({ stream : true }))
 );
 
 gulp.task('watch', function () {
-    watch(['src\/html\/**\/*.html', 'src\/scss\/**\/*.scss', ], batch(function (events, done) {
-        gulp.start('build', done);
+    watch(path.src.html, batch(function (events, done) {
+        gulp.start('html', done);
     }));
+    watch(path.src.style, batch(function (events, done) {
+        gulp.start('sass', done);
+    }));
+    watch(path.src.image, batch(function (events, done) {
+        gulp.start('copy', done);
+    }));
+    // watch([
+    //         path.src.html
+    //         ,path.src.style
+    //         ,path.src.image
+    //     ], batch(function (events, done) {
+    //     gulp.start('build', done);
+    // }));
 });
 
-gulp.task('build', ['html', 'sass', 'watch']);
-gulp.task('start', ['clean'], function(){
-    gulp.start('build')
+gulp.task('browserSync', ['html', 'sass', 'copy'], function () {
+    return browserSync.init({
+        port : 0518,
+        server: {
+            baseDir: 'build/',
+            directory: true
+        }
+    });
+});
+
+gulp.task('build', ['clean'], function(){
+    gulp.start(['browserSync', 'watch'])
 });
 
 /**
