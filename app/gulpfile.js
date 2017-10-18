@@ -71,20 +71,14 @@ gulp.task('watch', function () {
     watch(path.src.image, batch(function (events, done) {
         gulp.start('copy', done);
     }));
-    // watch([
-    //         path.src.html
-    //         ,path.src.style
-    //         ,path.src.image
-    //     ], batch(function (events, done) {
-    //     gulp.start('build', done);
-    // }));
 });
 
 gulp.task('browserSync', ['html', 'sass', 'copy'], function () {
     return browserSync.init({
-        port : 0518,
+        port : 9658,
         server: {
             baseDir: 'build/',
+            index: 'build/html/',
             directory: true
         }
     });
@@ -96,8 +90,7 @@ gulp.task('build', ['clean'], function(){
 
 /**
  * TODO
- * watch, merge, uglify, minify, html/scss/js lint, image sprite task
- * gulp-copy
+ * minify, merge, uglify, html/scss/js lint, image sprite task
  */
 
  //   .pipe(watch('src/html/**/*.html'))
