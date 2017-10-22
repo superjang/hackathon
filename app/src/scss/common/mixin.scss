@@ -55,7 +55,9 @@
 }
 
 @mixin clearfix{
-    display: table;
-    clear: both;
-    content: "";
+    &:after{
+        display: block;
+        clear: both;
+        content: "";
+    }
 }

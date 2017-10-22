@@ -4,7 +4,14 @@
 @import "../../common/mixin";
 @import "../../common/reset";
 
-// component
-@import "../../include/smilepay/share_sns";
+// app common
+@import "../../include/smilepay/common/const";
+@import "../../include/smilepay/common/header";
+@import "../../include/smilepay/common/footer";
+@import "../../include/smilepay/common/share/base";
+
+// app component
+@import "../../include/smilepay/intro/intro";
+@import "../../include/smilepay/linker_list/list";
 
 // layout

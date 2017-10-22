@@ -4,6 +4,7 @@ const del = require('del');
 const watch = require('gulp-watch');
 const batch = require('gulp-batch');
 const include = require('gulp-replace-include');
+const fileinclude = require('gulp-file-include');
 const sass = require('gulp-ruby-sass');
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -12,13 +13,15 @@ const path = {
         root: 'src'
         ,html: 'src\/html\/**\/*.html'
         ,style: 'src\/scss\/**\/*.scss'
-        ,image: 'src\/image\/independence\/**'
+        ,image: 'src\/image\/single\/**'
+        ,js: 'src\/js\/**\/*.js'
     },
     build: {
         root: 'build'
         ,html: 'build\/html'
         ,style: 'build\/css'
-        ,image: 'build\/image\/independence\/'
+        ,image: 'build\/image\/single\/'
+        ,js: 'build\/js\/'
     }
 };
 
@@ -28,9 +31,14 @@ gulp.task('clean', () =>
     })
 );
 
-gulp.task('copy', () =>
+gulp.task('copy:image', () =>
     gulp.src(path.src.image)
         .pipe(gulp.dest(path.build.image))
+);
+
+gulp.task('copy:js', () =>
+    gulp.src(path.src.js)
+        .pipe(gulp.dest(path.build.js))
 );
 
 gulp.task('html', function(){
@@ -40,7 +48,12 @@ gulp.task('html', function(){
         ,include: ['src\/html\/include\/']
         ,prefix: '@@'
         ,global: {
-            'smilepay': '장재원'
+            'image_single': '/image/single'
+            ,'image_sprite': '/image/sprite'
+            ,'js': '/js'
+            ,'css': '/css'
+            ,'html': '/html'
+            ,'smilepay': '장재원'
         }
     }))
     .pipe(gulp.dest(path.build.html))
@@ -69,13 +82,16 @@ gulp.task('watch', function () {
         gulp.start('sass', done);
     }));
     watch(path.src.image, batch(function (events, done) {
-        gulp.start('copy', done);
+        gulp.start('copy:image', done);
+    }));
+    watch(path.src.js, batch(function (events, done) {
+        gulp.start('copy:js', done);
     }));
 });
 
-gulp.task('browserSync', ['html', 'sass', 'copy'], function () {
+gulp.task('browserSync', ['html', 'sass', 'copy:image', 'copy:js'], function () {
     return browserSync.init({
-        port : 9658,
+        port : 8888,
         server: {
             baseDir: 'build/',
             index: 'build/html/',

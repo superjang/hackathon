@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+@keyframes activeLight {
+    // 0%   {background-color:#000;}
+    // 25%  {background-color:yellow;}
+    // 50%  {background-color:rgb(5, 0, 45);}
+    // 75%  {background-color:green;}
+    // 100% {background-color:rgb(5, 0, 45);}
+
+    from {background-color: #000;}
+    to {background-color: $color_navi;}
+}
+
+@keyframes initLogoIcon {
+    from {bottom: -100px;}
+    to {bottom:60%;}
+}
+
+.box__intro_visual{
+    position: fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    background-color: $color_navi;
+
+    animation-name: activeLight;
+    animation-duration: 3s;
+    // animation-delay: 2s;
+    animation-iteration-count: 1;
+
+    .box__app_logo{
+        position:absolute;
+        top:50%;
+        width: 100%;
+        text-align: center;
+        margin-top:-35px;
+
+        .text__smilepay{
+            position: relative;
+            display: inline-block;
+            padding-left: 70px;
+            height: 60px;
+            .icon__smilepay{
+                position: absolute;
+                width:60px;
+                height:60px;
+                left:0px;
+                display:inline-block;
+                border-radius: 50%;
+                background-color: $color_yellow;
+                animation-name: initLogoIcon;
+                animation-duration: 2s;
+                animation-iteration-count: 1;
+                transition:all 1s ease;
+                .icon__element--1{
+                    background-color: #fff;
+                    border-radius: 2px 2px 55px 55px;
+                    height: 25px;
+                    position: absolute;
+                    bottom: 8%;
+                    left: 8%;
+                    right: 8%;
+                }
+            }
+            .text__element--1,
+            .text__element--2{
+                display:inline-block;
+                color:#fff;
+                font-size:48px;
+                line-height:48px;
+                margin-top:5px;
+                font:{
+                    family: helvetica;
+                    weight: bold;
+                }
+            }
+        }
+        &.off{
+            .icon__smilepay{
+                width: 1000%;
+                height: 10000%;
+                left: -500%;
+                top: -660%;
+                right: 0;
+                bottom: 0;
+                display: block;
+            }
+        }
+    }
+}

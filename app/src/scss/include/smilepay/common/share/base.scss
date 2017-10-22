@@ -1,0 +1,261 @@
+@charset "UTF-8";
+
+.box__share_sns{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    z-index: 10;
+    overflow:hidden;
+    .button__share_list{
+        width:36px;
+        height:36px;
+        background-color:rgb(27, 191, 198);
+        .text__description{
+		    @include ir();
+        }
+    }
+
+    .list__sns{
+        display:none;
+    }
+
+    &.on{
+        overflow:visible;
+        .list__sns{
+            display:block;
+            .icon{
+                width:36px;
+                height:36px;
+                position:absolute;
+                bottom:0;
+                background-color:yellow;
+                &.kakaotalk{
+                    right:50px;
+                }
+                &.facebook{
+                    right:100px;
+                    bottom:-20px;
+                }
+                &.twitter{
+                    right:150px;
+                    bottom:-40px;
+                }
+                &.line{
+                    right:200px;
+                    bottom:-60px;
+                }
+            }
+        }
+    }
+}
+
+
+$share-icon-width:34px;
+$share-icon-height:34px;
+$share-icon-margin:34px;
+$share-icon-bounce-up:8px;
+$share-icon-bounce-down:4px;
+$share-icon-bounce-time:.4s;
+
+.share-wrap{
+    display:none;
+    z-index: 1000;
+    position: absolute;
+	height:$share-icon-height;
+    top: 50%;
+    right: 0;
+    margin-top: $share-icon-height/2 * -1;
+	*zoom:1;
+	.toggle{
+		position:absolute;
+		top:50%;
+		right:0;
+		margin-top:$share-icon-height/2*-1;
+		z-index:20;
+	}
+	&.on{
+        display:block;
+		&:before, ul, li{
+			opacity:1;
+		}
+		&:before{
+			-webkit-animation: share-dimmed-open 0.5s forwards;
+			-moz-animation: share-dimmed-open 0.5s infinite;
+			-o-animation: share-dimmed-open 0.5s infinite;
+			animation: share-dimmed-open 0.5s forwards;
+		}
+		.ico.toggle{
+			// @include sp-deals('btn_share_toggle_active');
+		}
+		li{
+			.ico{
+				-webkit-animation: flowery-pop-open $share-icon-bounce-time forwards;
+				-moz-animation: flowery-pop-open $share-icon-bounce-time infinite;
+				-o-animation: flowery-pop-open $share-icon-bounce-time infinite;
+				animation: flowery-pop-open $share-icon-bounce-time forwards;
+			}
+		}
+	}
+	&:before{
+		position:fixed;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+		background:rgba(0,0,0,.765);
+		content:'';
+		opacity:0;
+		-webkit-transition: opacity 0.4s ease-in;
+		transition: opacity 0.4s ease-in;
+	}
+	&:after{
+		display:block;
+		clear:both;
+		content:'';
+	}
+	.share-inner {
+		overflow:hidden;
+		position:absolute;
+		top:($share-icon-height + $share-icon-margin + $share-icon-bounce-up) * -1;
+		right:0;
+		text-align:right;
+		width:($share-icon-width * 2) + $share-icon-margin + $share-icon-bounce-up;
+		height:($share-icon-margin * 2) + ($share-icon-height * 3) + ($share-icon-bounce-up * 2);
+	}
+
+	.ico{
+        background-color:rgb(0, 207, 156);
+		overflow:hidden;
+		display:inline-block;
+		width:$share-icon-width;
+		height:$share-icon-height;
+		@include ir();
+		// @include sp-deals('btn_share_toggle_normal');
+		&.kakaotalk{
+            background-color:red;
+			// @include sp-deals('btn_share_kakaotalk');
+		}
+		&.kakaostory{
+            background-color:red;
+			// @include sp-deals('btn_share_kakaostory');
+		}
+		&.facebook{
+            background-color:red;
+			// @include sp-deals('btn_share_facebook');
+		}
+		&.line{
+            background-color:red;
+			// @include sp-deals('btn_share_line');
+		}
+		&.url{
+            background-color:red;
+			// @include sp-deals('btn_share_url');
+		}
+		&.sms{
+            background-color:red;
+			// @include sp-deals('btn_share_sms');
+		}
+	}
+	ul{
+		display:block;
+		position:absolute;
+		width:$share-icon-width;
+		height:$share-icon-height;
+		top:50%;
+		right:0;
+		margin-top:$share-icon-height/2*-1;
+		li{
+			display:inline-block;
+			position:absolute;
+			bottom:($share-icon-margin + $share-icon-height) * -1;
+			left:0;
+			width:$share-icon-width;
+			height:($share-icon-margin * 2) + ($share-icon-height * 3);
+			-webkit-transition: opacity 0.04s ease-in;
+			transition: opacity 0.04s ease-in;
+			opacity: 0.001;
+			.ico{
+				position:absolute;
+				top:$share-icon-height + $share-icon-margin;
+				left:0;
+				z-index:20;
+				-webkit-animation: flowery-pop-close $share-icon-bounce-time forwards;
+				-moz-animation: flowery-pop-close $share-icon-bounce-time infinite;
+				-o-animation: flowery-pop-close $share-icon-bounce-time infinite;
+				animation: flowery-pop-close $share-icon-bounce-time forwards;
+			}
+		}
+		li:last-child{
+			-webkit-transform:rotate(-180deg);
+			transform:rotate(-180deg);
+			.ico{
+				-webkit-transform:rotate(180deg);
+				transform:rotate(180deg);
+			}
+		}
+		@for $i from 1 through 10{
+			li:nth-child(#{$i}){
+				.ico{
+					$animation-delay : (($i)-1) * -0.04s;
+					animation-delay:$animation-delay;
+				}
+			}
+		}
+		@for $i from 3 through 10{
+			&.length#{$i}{
+				@for $j from 2 through $i{
+					li:nth-child(#{$j}){
+						$rotate-deg : 180/(($i)-1)*(($j)-1) * 1deg;
+						-webkit-transform:rotate($rotate-deg * -1);
+						transform:rotate($rotate-deg * -1);
+						.ico{
+							-webkit-transform:rotate($rotate-deg);
+							transform:rotate($rotate-deg);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@-webkit-keyframes flowery-pop-open {
+    70%  {top:-$share-icon-bounce-up}
+    85%  {top:$share-icon-bounce-down}
+    100% {top:0}
+}
+@-moz-keyframes flowery-pop-open {
+    70%  {top:-$share-icon-bounce-up}
+    85%  {top:$share-icon-bounce-down}
+    100% {top:0}
+}
+@-o-keyframes flowery-pop-open {
+    70%  {top:-$share-icon-bounce-up}
+    85%  {top:$share-icon-bounce-down}
+    100% {top:0}
+}
+@keyframes flowery-pop-open {
+    45%  {top:-$share-icon-bounce-up}
+    85%  {top:$share-icon-bounce-down}
+    100% {top:0}
+}
+@-webkit-keyframes flowery-pop-close {
+	0% {top:0}
+	40% {top:-$share-icon-bounce-up}
+	100% {top:$share-icon-height + $share-icon-margin;}
+}
+@-moz-keyframes flowery-pop-close {
+	0% {top:0}
+	40% {top:-$share-icon-bounce-up}
+	100% {top:$share-icon-height + $share-icon-margin;}
+}
+@-o-keyframes flowery-pop-close {
+	0% {top:0}
+	40% {top:-$share-icon-bounce-up}
+	100% {top:$share-icon-height + $share-icon-margin;}
+}
+@keyframes flowery-pop-close {
+	0% {top:0}
+	40% {top:-$share-icon-bounce-up}
+	100% {top:$share-icon-height + $share-icon-margin;}
+}
