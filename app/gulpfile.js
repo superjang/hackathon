@@ -1,9 +1,9 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const del = require('del');
+const filter = require('gulp-filter');
 const watch = require('gulp-watch');
 const batch = require('gulp-batch');
-const include = require('gulp-replace-include');
 const fileinclude = require('gulp-file-include');
 const sass = require('gulp-ruby-sass');
 const sourcemaps = require('gulp-sourcemaps');
@@ -41,19 +41,17 @@ gulp.task('copy:js', () =>
         .pipe(gulp.dest(path.build.js))
 );
 
-gulp.task('html', function(){
-  return gulp.src(path.src.html)
-    .pipe(include({
-        src: 'src\/html\/app'
-        ,include: ['src\/html\/include\/']
-        ,prefix: '@@'
-        ,global: {
+gulp.task('fileinclude', function(){
+    gulp.src(path.src.html)
+    .pipe(fileinclude({
+        prefix: '@@'
+        ,basepath: 'src\/html\/include\/'
+        ,context: {
             'image_single': '/image/single'
             ,'image_sprite': '/image/sprite'
             ,'js': '/js'
             ,'css': '/css'
             ,'html': '/html'
-            ,'smilepay': '장재원'
         }
     }))
     .pipe(gulp.dest(path.build.html))
@@ -64,7 +62,6 @@ gulp.task('sass', () =>
     sass(path.src.style,{
         sourcemap: true
     })
-    // .pipe('src\/scss\/**\/*.scss')
     .on('error', sass.logError)
     .pipe(sourcemaps.write('maps', {
         includeContent: false,
@@ -76,7 +73,7 @@ gulp.task('sass', () =>
 
 gulp.task('watch', function () {
     watch(path.src.html, batch(function (events, done) {
-        gulp.start('html', done);
+        gulp.start('fileinclude', done);
     }));
     watch(path.src.style, batch(function (events, done) {
         gulp.start('sass', done);
@@ -89,7 +86,7 @@ gulp.task('watch', function () {
     }));
 });
 
-gulp.task('browserSync', ['html', 'sass', 'copy:image', 'copy:js'], function () {
+gulp.task('browserSync', ['fileinclude', 'sass', 'copy:image', 'copy:js'], function () {
     return browserSync.init({
         port : 8888,
         server: {

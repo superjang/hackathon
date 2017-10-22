@@ -1,6 +1,11 @@
 <ul class="vip__list">
-    @@include(smilepay/linker_list/list_type_wide.html)
-    @@include(smilepay/linker_list/list_type_wide.html)
-    @@include(smilepay/linker_list/list_type_narrow.html)
-    @@include(smilepay/linker_list/list_type_narrow.html)
+    @@loop('smilepay/linker_list/list_type_wide.html', [
+        { "image": "//uidev.xyz/image?width=375&height=250&service=item_list", "category": "즉석/간식/가공식품", "title": "초특가 컵라면 진라면 신라면 라면사리 왕뚜껑."},
+        { "image": "//uidev.xyz/image?width=375&height=250&service=item_list", "category": "음향기기", "title": "100W 리얼우퍼 LED 블루투스 스피커, 최고급 사양 신제품"}
+    ])
+
+    @@loop('smilepay/linker_list/list_type_narrow.html', [
+        { "image": "//uidev.xyz/image?width=150&height=90&service=item_list", "category": "즉석/간식/가공식품", "title": "초특가 컵라면 진라면 신라면 라면사리 왕뚜껑."},
+        { "image": "//uidev.xyz/image?width=150&height=90&service=item_list", "category": "음향기기", "title": "100W 리얼우퍼 LED 블루투스 스피커, 최고급 사양 신제품"}
+    ])
 </ul>

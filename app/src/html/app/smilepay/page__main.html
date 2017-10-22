@@ -1,12 +1,17 @@
-@@include(smilepay/common/head.html)
+@@include('smilepay/common/head.html', {
+    "page_name": "main",
+    "service_id": "smilepay"
+})
 <body id="app__id--smilepay" class="page__main">
-    @@include(smilepay/common/header.html)
+    @@include('smilepay/common/header.html', {
+        "page_name": "main"
+    })
 
     <section id="app__content">
-        <p>파일명 : @@path@@file</p>
-        @@include(smilepay/intro/intro.html)
+        <p>파일명 : e</p>
+        @@include('smilepay/intro/intro.html')
     </section>
 
-    @@include(smilepay/common/footer.html)
+    @@include('smilepay/common/footer.html')
 </body>
 </html>
