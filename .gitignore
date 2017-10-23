@@ -1,6 +1,7 @@
 # Etc
 app/.sass-cache
 .idea/
+.idea/workspace.xml
 
 # Floters
 node_modules/
