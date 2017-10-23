@@ -2,8 +2,8 @@
 
 .box__share_sns{
     position: absolute;
-    right: 0;
-    bottom: 10px;
+	right: 15px;
+	bottom: 15px;
     z-index: 10;
     overflow:hidden;
     .button__share_list{
@@ -57,8 +57,8 @@ $share-icon-bounce-up:8px;
 $share-icon-bounce-down:4px;
 $share-icon-bounce-time:.4s;
 
-.share-wrap{
-    display:none;
+.box__share_sns{
+    //display:none;
     z-index: 1000;
     position: absolute;
 	height:$share-icon-height;

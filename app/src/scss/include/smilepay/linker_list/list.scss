@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
-.vip__list{
+.list__vip{
     .vip__item{
+        position:relative;
         &.wide_thumbnail{
             margin-top:10px;
             &:first-child{
@@ -10,10 +11,20 @@
             .link__vip_item{
                 position:relative;
                 font-size:0;
-                .post__details{
-                    background-color: rgba(0,0,0,0.8);
+                .image__vip_item{
+                    .thumbnail{
+
+                    }
+                }
+                .detail__vip_item{
+                    padding: 0 60px 15px 15px;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background: linear-gradient(to bottom, rgba(0,0,0,0) 20%,rgba(0,0,0,.5) 100%);
                     .description{
-                        display: none;
+                        //display: none;
                     }
                 }
             }
@@ -22,25 +33,48 @@
         &.narrow_thumbnail{
             .link__vip_item{
                 border-top: 1px solid #eaeaea;
-                .post__image{
+                .image__vip_item{
                     float:left;
+                    .thumbnail{
+                      width:100%;
+                    }
+                }
+                .detail__vip_item{
+                    padding:0px 40px 0 15px;
                 }
             }
             &:first-child{
                 background: red;
-                .post{
+                .link__vip_item{
                     border-top:none;
                 }
             }
         }
 
-        .post__image{
-            background-size:contain;
-        }
+        // wide, narrow 타입 공통
+        //.box__vip_item_share{
+        //    height:35px;
+        //    .box__status{
+        //        width:30px;
+        //        height:auto;
+        //
+        //        .icon{
+        //
+        //        }
+        //    }
+        //
+        //    .box__share{
+        //
+        //    }
+        //
+        //    &.on{
+        //
+        //    }
+        //}
     }
 }
 
-.vip__list .vip__item.wide_thumbnail .post, .header-all li .post, .post-single-3 .header {
+.list__vip .vip__item.wide_thumbnail .link__vip_item {
   position: relative;
   width: 100%;
   margin: 0;
@@ -52,18 +86,18 @@
   border-top: none;
 }
 
-.vip__list .vip__item.wide_thumbnail .post__image, .header-all li .post__image, .post-single-3 .header .image__vip_item {
+.list__vip .vip__item.wide_thumbnail .image__vip_item {
 
   position: relative;
   width: 100%;
-  height: 250px;
+  height: auto;
 }
 
-.vip__list .vip__item.wide_thumbnail .image__vip_item img, .header-all li .image__vip_item img {
+.list__vip .vip__item.wide_thumbnail .image__vip_item img {
   width: 100%;
 }
 
-.vip__list .vip__item.wide_thumbnail .post__details, .header-all li .post__details, .post-single-3 .header .detail__vip_item {
+.list__vip .vip__item.wide_thumbnail .detail__vip_item {
   padding: 0 15px 15px 15px;
   width: 100%;
   position: absolute;
@@ -71,36 +105,32 @@
   bottom: 0;
 }
 
-.vip__list .vip__item.wide_thumbnail .post-title, .header-all li .post-title, .post-single-3 .header .post-title {
+.list__vip .vip__item.wide_thumbnail .post-title {
 
   width: 100%;
   position: relative;
   overflow: hidden;
 }
 
-.vip__list .vip__item.wide_thumbnail .post__title_content, .header-all li .post__title_content, .post-single-3 .header .post__title_content {
+.list__vip .vip__item.wide_thumbnail .title_content {
     font-size: 14px;
       line-height: 1.4;
       color: #fff;
       margin-top: 10px;
 }
 
-.vip__list .vip__item.wide_thumbnail .description, .header-all li .description, .post-single-3 .header .description {
-  background: rgba(0, 0, 0, .8);
-  color: #dbdddf;
-  margin-top: 2px;
-  padding: 5px 7px;
-  display: inline-block;
+.list__vip .vip__item.wide_thumbnail .description {
+  margin: 5px 0;
   float: left;
   font-size: 12px;
   line-height: 12px;
 }
 
-.vip__list {
+.list__vip {
   list-style: none;
 }
 
-.vip__list .link__vip_item{
+.list__vip .link__vip_item{
     display: block;
   max-width: 100%;
   margin: 0 15px;
@@ -109,32 +139,32 @@
   height: 120px;
 }
 
-.vip__list li:nth-child(1) .link__vip_item{
+.list__vip li:nth-child(1) .link__vip_item{
   border-top: none;
 }
 
-.vip__list .image__vip_item {
+.list__vip .image__vip_item {
   width: 150px;
   height: 90px;
   overflow: hidden;
   border-radius: 1px;
 }
 
-.vip__list .image__vip_item img {
+.list__vip .image__vip_item img {
   min-height: 90px;
   width: auto;
   -o-object-fit: cover;
   object-fit: cover;
 }
 
-.vip__list .detail__vip_item {
+.list__vip .detail__vip_item {
 
   width: calc(100% - 150px);
   padding: 0px 0 0 15px;
   float: right;
 }
 
-.vip__list .post__title_content {
+.list__vip .title_content {
   font-size: 15px;
   margin: 4px 0 4px;
   color: #313131;
@@ -146,7 +176,7 @@
   overflow: hidden;
 }
 
-.vip__list .post__category, .post-single .post__category {
+.list__vip .category, .post-single .category {
   color: #fff;
   font-size: 10px;
   letter-spacing: .02em;
@@ -159,7 +189,7 @@
   font-weight: 600;
 }
 
-.vip__list .description {
+.list__vip .description {
   color: #b7bdc4;
   font-size: 12px;
 }
