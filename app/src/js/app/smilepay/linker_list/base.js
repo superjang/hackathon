@@ -18,11 +18,13 @@ SnsShare.prototype = {
         this.$dom.boxShareSns.on('click', $.proxy(this.toggleSnsList, this));
     },
 
-    toggleSnsList: function(params){
-        if($(this).hasClass('on')){
-            $(this).removeClass('on')
+    toggleSnsList: function(event){
+        event.preventDefault();
+        var boxShareSns = $(event.currentTarget)
+        if(boxShareSns.hasClass('on')){
+            boxShareSns.removeClass('on')
         }else{
-            $(this).addClass('on')
+            boxShareSns.addClass('on')
         }
     }
 

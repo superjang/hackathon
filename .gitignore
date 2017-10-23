@@ -1,5 +1,6 @@
 # Etc
 app/.sass-cache
+.idea/
 
 # Floters
 node_modules/

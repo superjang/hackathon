@@ -23,6 +23,24 @@
 
     .list__sns{
         //display:none;
+		.icon{
+			&.kakaotalk{
+				transition: all .1s cubic-bezier(0.42, 0, 0.59, 1.06);
+			}
+			&.facebook{
+				transition: all .18s cubic-bezier(0.42, 0, 0.59, 1.06);
+			}
+			&.twitter{
+				transition: all .24s cubic-bezier(0.42, 0, 0.59, 1.06);
+			}
+			&.line{
+				transition: all .27s cubic-bezier(0.42, 0, 0.59, 1.06);
+			}
+			.button__share_sns{
+				width:100%;
+				height:100%;
+			}
+		}
     }
 
     &.on{
@@ -57,11 +75,6 @@
                     right:200px;
                     bottom:200px;
                 }
-
-				.button__share_sns{
-					width:100%;
-					height:100%;
-				}
             }
         }
     }
@@ -83,6 +96,20 @@ $share-icon-bounce-time:.4s;
 		margin-top:$share-icon-height/2*-1;
 		z-index:20;
 	}
+	&:before{
+		width:0;
+		height:0;
+		position:fixed;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+		background:rgba(0,0,0, 0);
+		transition: all .3s ease-in;
+		content:'';
+		opacity:1;
+		//transition: opacity 0.4s ease-in;
+	}
 	&.on{
         display:block;
 		&:before, ul, li, .button__share_list{
@@ -95,16 +122,17 @@ $share-icon-bounce-time:.4s;
 			animation: share-dimmed-open 0.5s forwards;
 		}
 		&:before{
-			position:fixed;
-			top:0;
-			right:0;
-			bottom:0;
-			left:0;
+			width:auto;
+			height:auto;
+			//position:fixed;
+			//top:0;
+			//right:0;
+			//bottom:0;
+			//left:0;
 			background:rgba(0,0,0,.765);
-			content:'';
+			//content:'';
 			opacity:1;
-			-webkit-transition: opacity 0.4s ease-in;
-			transition: opacity 0.4s ease-in;
+			//transition: opacity 0.4s ease-in;
 		}
 		.icon.toggle{
 
@@ -134,42 +162,16 @@ $share-icon-bounce-time:.4s;
 		height:($share-icon-margin * 2) + ($share-icon-height * 3) + ($share-icon-bounce-up * 2);
 	}
 
-	.ico{
-        background-color:rgb(0, 207, 156);
-		overflow:hidden;
-		display:inline-block;
-		width:$share-icon-width;
-		height:$share-icon-height;
-		@include ir();
-		&.kakaotalk{
-            background-color:red;
-		}
-		&.kakaostory{
-            background-color:red;
-		}
-		&.facebook{
-            background-color:red;
-		}
-		&.line{
-            background-color:red;
-		}
-		&.url{
-            background-color:red;
-		}
-		&.sms{
-            background-color:red;
-		}
-	}
 	ul{
 		li{
 			display:inline-block;
 			position:absolute;
-			bottom:($share-icon-margin + $share-icon-height) * -1;
+			//bottom:($share-icon-margin + $share-icon-height) * -1;
 			left:0;
+			bottom:0;
 			width:$share-icon-width;
+			height:$share-icon-width;
 			//height:($share-icon-margin * 2) + ($share-icon-height * 3);
-			-webkit-transition: opacity 0.04s ease-in;
-			transition: opacity 0.04s ease-in;
 			opacity: 0.001;
 			.icon{
 				position:absolute;
@@ -214,45 +216,4 @@ $share-icon-bounce-time:.4s;
 			}
 		}
 	}
-}
-
-@-webkit-keyframes flowery-pop-open {
-    70%  {top:-$share-icon-bounce-up}
-    85%  {top:$share-icon-bounce-down}
-    100% {top:0}
-}
-@-moz-keyframes flowery-pop-open {
-    70%  {top:-$share-icon-bounce-up}
-    85%  {top:$share-icon-bounce-down}
-    100% {top:0}
-}
-@-o-keyframes flowery-pop-open {
-    70%  {top:-$share-icon-bounce-up}
-    85%  {top:$share-icon-bounce-down}
-    100% {top:0}
-}
-@keyframes flowery-pop-open {
-    45%  {top:-$share-icon-bounce-up}
-    85%  {top:$share-icon-bounce-down}
-    100% {top:0}
-}
-@-webkit-keyframes flowery-pop-close {
-	0% {top:0}
-	40% {top:-$share-icon-bounce-up}
-	100% {top:$share-icon-height + $share-icon-margin;}
-}
-@-moz-keyframes flowery-pop-close {
-	0% {top:0}
-	40% {top:-$share-icon-bounce-up}
-	100% {top:$share-icon-height + $share-icon-margin;}
-}
-@-o-keyframes flowery-pop-close {
-	0% {top:0}
-	40% {top:-$share-icon-bounce-up}
-	100% {top:$share-icon-height + $share-icon-margin;}
-}
-@keyframes flowery-pop-close {
-	0% {top:0}
-	40% {top:-$share-icon-bounce-up}
-	100% {top:$share-icon-height + $share-icon-margin;}
 }
