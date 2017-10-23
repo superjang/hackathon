@@ -82,7 +82,14 @@ https://spweb.auction.co.kr/ko/User/MyInfo/MySmile
 >광고 관련 정보 노출 페이지
 
 - Component
-    - 
+    - 링커 등급
+    - 링커 순위
+    - 카테고리별 공유한 광고 카운트
+    - SNS 탕입별 공유한 광고 카운트
+    - 전체 공유 카운트
+    - 구매전환 카운트
+    - 광고한 딜 리스트 정렬(날짜별, 기간별, 카테고리별, 공유타입별)
+    
 - API
     - Dashboard
     ```js
