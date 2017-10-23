@@ -37,6 +37,7 @@ gulp.task('copy:image', () =>
 );
 
 gulp.task('copy:js', () =>
+// https://github.com/craigjennings11/gulp-uglifyjs
     gulp.src(path.src.js)
         .pipe(gulp.dest(path.build.js))
 );

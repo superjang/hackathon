@@ -7,12 +7,12 @@
             &:first-child{
                 margin-top:0;
             }
-            .post{
+            .link__vip_item{
                 position:relative;
                 font-size:0;
                 .post__details{
                     background-color: rgba(0,0,0,0.8);
-                    .post__publication{
+                    .description{
                         display: none;
                     }
                 }
@@ -20,7 +20,7 @@
         }
 
         &.narrow_thumbnail{
-            .post{
+            .link__vip_item{
                 border-top: 1px solid #eaeaea;
                 .post__image{
                     float:left;
@@ -48,22 +48,22 @@
   height: auto;
 }
 
-.header-all li .post {
+.header-all li .link__vip_item {
   border-top: none;
 }
 
-.vip__list .vip__item.wide_thumbnail .post__image, .header-all li .post__image, .post-single-3 .header .post__image {
+.vip__list .vip__item.wide_thumbnail .post__image, .header-all li .post__image, .post-single-3 .header .image__vip_item {
 
   position: relative;
   width: 100%;
   height: 250px;
 }
 
-.vip__list .vip__item.wide_thumbnail .post__image img, .header-all li .post__image img {
+.vip__list .vip__item.wide_thumbnail .image__vip_item img, .header-all li .image__vip_item img {
   width: 100%;
 }
 
-.vip__list .vip__item.wide_thumbnail .post__details, .header-all li .post__details, .post-single-3 .header .post__details {
+.vip__list .vip__item.wide_thumbnail .post__details, .header-all li .post__details, .post-single-3 .header .detail__vip_item {
   padding: 0 15px 15px 15px;
   width: 100%;
   position: absolute;
@@ -85,7 +85,7 @@
       margin-top: 10px;
 }
 
-.vip__list .vip__item.wide_thumbnail .post__publication, .header-all li .post__publication, .post-single-3 .header .post__publication {
+.vip__list .vip__item.wide_thumbnail .description, .header-all li .description, .post-single-3 .header .description {
   background: rgba(0, 0, 0, .8);
   color: #dbdddf;
   margin-top: 2px;
@@ -100,7 +100,7 @@
   list-style: none;
 }
 
-.vip__list .post {
+.vip__list .link__vip_item{
     display: block;
   max-width: 100%;
   margin: 0 15px;
@@ -109,25 +109,25 @@
   height: 120px;
 }
 
-.vip__list li:nth-child(1) .post {
+.vip__list li:nth-child(1) .link__vip_item{
   border-top: none;
 }
 
-.vip__list .post__image {
+.vip__list .image__vip_item {
   width: 150px;
   height: 90px;
   overflow: hidden;
   border-radius: 1px;
 }
 
-.vip__list .post__image img {
+.vip__list .image__vip_item img {
   min-height: 90px;
   width: auto;
   -o-object-fit: cover;
   object-fit: cover;
 }
 
-.vip__list .post__details {
+.vip__list .detail__vip_item {
 
   width: calc(100% - 150px);
   padding: 0px 0 0 15px;
@@ -159,7 +159,7 @@
   font-weight: 600;
 }
 
-.vip__list .post__publication {
+.vip__list .description {
   color: #b7bdc4;
   font-size: 12px;
 }
