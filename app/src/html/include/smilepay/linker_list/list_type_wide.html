@@ -9,11 +9,7 @@
             <div class="description">추가정보</div>
         </div>
     </a>
-    @@include('smilepay/common/share/base.html')
-    <!--<div class="box__vip_item_share">-->
-        <!--<div class="box__status"><span class="icon"></span></div>-->
-        <!--<div class="box__share">-->
-            <!--div.-->
-        <!--</div>-->
-    <!--</div>-->
+    @@include('smilepay/common/share/base.html', {
+        "status": "@@sns_status"
+    })
 </li>

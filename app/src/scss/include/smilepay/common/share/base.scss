@@ -1,14 +1,20 @@
 @charset "UTF-8";
 
 .box__share_sns{
+	width:36px;
+	height:36px;
     position: absolute;
 	right: 15px;
 	bottom: 15px;
     z-index: 10;
-    overflow:hidden;
+	font-size:0;
+    //overflow:hidden;
     .button__share_list{
         width:36px;
         height:36px;
+		position:relative;
+		right:0;
+		bottom:0;
         background-color:rgb(27, 191, 198);
         .text__description{
 		    @include ir();
@@ -16,13 +22,19 @@
     }
 
     .list__sns{
-        display:none;
+        //display:none;
     }
 
     &.on{
+		z-index: 100;
         overflow:visible;
+		.button__share_list{
+			position: absolute;
+			z-index:20;
+		}
         .list__sns{
             display:block;
+			z-index:10;
             .icon{
                 width:36px;
                 height:36px;
@@ -31,19 +43,25 @@
                 background-color:yellow;
                 &.kakaotalk{
                     right:50px;
+					bottom:50px;
                 }
                 &.facebook{
                     right:100px;
-                    bottom:-20px;
+                    bottom:100px;
                 }
                 &.twitter{
                     right:150px;
-                    bottom:-40px;
+                    bottom:150px;
                 }
                 &.line{
                     right:200px;
-                    bottom:-60px;
+                    bottom:200px;
                 }
+
+				.button__share_sns{
+					width:100%;
+					height:100%;
+				}
             }
         }
     }
@@ -58,14 +76,6 @@ $share-icon-bounce-down:4px;
 $share-icon-bounce-time:.4s;
 
 .box__share_sns{
-    //display:none;
-    z-index: 1000;
-    position: absolute;
-	height:$share-icon-height;
-    top: 50%;
-    right: 0;
-    margin-top: $share-icon-height/2 * -1;
-	*zoom:1;
 	.toggle{
 		position:absolute;
 		top:50%;
@@ -75,7 +85,7 @@ $share-icon-bounce-time:.4s;
 	}
 	&.on{
         display:block;
-		&:before, ul, li{
+		&:before, ul, li, .button__share_list{
 			opacity:1;
 		}
 		&:before{
@@ -84,11 +94,23 @@ $share-icon-bounce-time:.4s;
 			-o-animation: share-dimmed-open 0.5s infinite;
 			animation: share-dimmed-open 0.5s forwards;
 		}
-		.ico.toggle{
-			// @include sp-deals('btn_share_toggle_active');
+		&:before{
+			position:fixed;
+			top:0;
+			right:0;
+			bottom:0;
+			left:0;
+			background:rgba(0,0,0,.765);
+			content:'';
+			opacity:1;
+			-webkit-transition: opacity 0.4s ease-in;
+			transition: opacity 0.4s ease-in;
+		}
+		.icon.toggle{
+
 		}
 		li{
-			.ico{
+			.icon{
 				-webkit-animation: flowery-pop-open $share-icon-bounce-time forwards;
 				-moz-animation: flowery-pop-open $share-icon-bounce-time infinite;
 				-o-animation: flowery-pop-open $share-icon-bounce-time infinite;
@@ -96,18 +118,7 @@ $share-icon-bounce-time:.4s;
 			}
 		}
 	}
-	&:before{
-		position:fixed;
-		top:0;
-		right:0;
-		bottom:0;
-		left:0;
-		background:rgba(0,0,0,.765);
-		content:'';
-		opacity:0;
-		-webkit-transition: opacity 0.4s ease-in;
-		transition: opacity 0.4s ease-in;
-	}
+
 	&:after{
 		display:block;
 		clear:both;
@@ -130,51 +141,37 @@ $share-icon-bounce-time:.4s;
 		width:$share-icon-width;
 		height:$share-icon-height;
 		@include ir();
-		// @include sp-deals('btn_share_toggle_normal');
 		&.kakaotalk{
             background-color:red;
-			// @include sp-deals('btn_share_kakaotalk');
 		}
 		&.kakaostory{
             background-color:red;
-			// @include sp-deals('btn_share_kakaostory');
 		}
 		&.facebook{
             background-color:red;
-			// @include sp-deals('btn_share_facebook');
 		}
 		&.line{
             background-color:red;
-			// @include sp-deals('btn_share_line');
 		}
 		&.url{
             background-color:red;
-			// @include sp-deals('btn_share_url');
 		}
 		&.sms{
             background-color:red;
-			// @include sp-deals('btn_share_sms');
 		}
 	}
 	ul{
-		display:block;
-		position:absolute;
-		width:$share-icon-width;
-		height:$share-icon-height;
-		top:50%;
-		right:0;
-		margin-top:$share-icon-height/2*-1;
 		li{
 			display:inline-block;
 			position:absolute;
 			bottom:($share-icon-margin + $share-icon-height) * -1;
 			left:0;
 			width:$share-icon-width;
-			height:($share-icon-margin * 2) + ($share-icon-height * 3);
+			//height:($share-icon-margin * 2) + ($share-icon-height * 3);
 			-webkit-transition: opacity 0.04s ease-in;
 			transition: opacity 0.04s ease-in;
 			opacity: 0.001;
-			.ico{
+			.icon{
 				position:absolute;
 				top:$share-icon-height + $share-icon-margin;
 				left:0;
@@ -188,14 +185,14 @@ $share-icon-bounce-time:.4s;
 		li:last-child{
 			-webkit-transform:rotate(-180deg);
 			transform:rotate(-180deg);
-			.ico{
+			.icon{
 				-webkit-transform:rotate(180deg);
 				transform:rotate(180deg);
 			}
 		}
 		@for $i from 1 through 10{
 			li:nth-child(#{$i}){
-				.ico{
+				.icon{
 					$animation-delay : (($i)-1) * -0.04s;
 					animation-delay:$animation-delay;
 				}
@@ -208,7 +205,7 @@ $share-icon-bounce-time:.4s;
 						$rotate-deg : 180/(($i)-1)*(($j)-1) * 1deg;
 						-webkit-transform:rotate($rotate-deg * -1);
 						transform:rotate($rotate-deg * -1);
-						.ico{
+						.icon{
 							-webkit-transform:rotate($rotate-deg);
 							transform:rotate($rotate-deg);
 						}

@@ -8,12 +8,27 @@
     })
 
     <section id="app__content">
-        사이트별 탭 영역 추가
-        샹세페이지추가(페이지내 공유플로팅 ui작업)
-        @@include('smilepay/linker_list/list.html')
+        <ul class="list__service_site">
+            <li class="item__service_site auction on">
+                @@include('smilepay/linker_list/list.html', {
+                    "service_site": "auction"
+                })
+            </li>
+            <li class="item__service_site gmarket">
+                @@include('smilepay/linker_list/list.html', {
+                    "service_site": "gmarket"
+                })
+            </li>
+            <li class="item__service_site g9">
+                @@include('smilepay/linker_list/list.html', {
+                    "service_site": "g9"
+                })
+            </li>
+        </ul>
     </section>
 
     @@include('smilepay/common/footer.html')
-    <script src=@@js/app/smilepay/app.js></script>
+    @@include('smilepay/common/script.html')
+    <script src="../../../js/app/smilepay/linker_list/base.js"></script>
 </body>
 </html>

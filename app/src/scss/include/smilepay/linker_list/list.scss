@@ -1,6 +1,17 @@
 @charset "UTF-8";
 
+.list__service_site{
+  .item__service_site{
+      &.on{
+          .list__vip{
+            display:block;
+          }
+      }
+  }
+}
+
 .list__vip{
+    display:none;
     .vip__item{
         position:relative;
         &.wide_thumbnail{
@@ -50,27 +61,6 @@
                 }
             }
         }
-
-        // wide, narrow 타입 공통
-        //.box__vip_item_share{
-        //    height:35px;
-        //    .box__status{
-        //        width:30px;
-        //        height:auto;
-        //
-        //        .icon{
-        //
-        //        }
-        //    }
-        //
-        //    .box__share{
-        //
-        //    }
-        //
-        //    &.on{
-        //
-        //    }
-        //}
     }
 }
 

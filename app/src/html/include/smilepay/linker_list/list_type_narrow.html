@@ -9,5 +9,7 @@
             <div class="description">추가정보</div>
         </div>
     </a>
-    @@include('smilepay/common/share/base.html')
+    @@include('smilepay/common/share/base.html', {
+        "status": "@@sns_status"
+    })
 </li>
