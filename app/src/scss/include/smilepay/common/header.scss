@@ -1,8 +1,52 @@
 @charset "UTF-8";
 
 #app__header{
-    padding:10px 15px;
     color:#fff;
-    width:100%;
     background-color: $color_navi;
+    box-shadow: 1px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+    .button__prev_page{
+        position:absolute;
+        left:0;
+        top:0;
+        width:50px;
+        height:50px;
+        background:linear-gradient(to right, rgba(20,23,58,1) 0%,rgba(20,23,58,0.79) 21%,rgba(125,185,232,0) 100%);
+        transition:all .5s ease-out;
+
+        .icon__back_arrow{
+            display:block;
+            width:15px;
+            height:15px;
+            border:{
+                top: 1px solid #fff;
+                left: 1px solid #fff;
+            }
+            transform: rotate(-45deg);
+            position:absolute;
+            left: 20px;
+            top: 50%;
+            margin-top: -8px;
+        }
+
+        &:hover,
+        &:focus{
+            width:100px;
+        }
+    }
+
+    .icon__logo{
+        display: block;
+        width: 130px;
+        height: 30px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -15px 0 0 -65px;
+        background: url(../../../image/single/common/sp_common.png) no-repeat left top;
+        background-size: 400px auto;
+        .ir{
+            @include ir();
+        }
+    }
 }
