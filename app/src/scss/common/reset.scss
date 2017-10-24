@@ -68,10 +68,15 @@ input[type="srch"],
 input[type="submit"],
 input[type="tel"],
 input[type="text"],
-textarea {
+textarea,
+button {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     border: 1px solid #ababab;
+
+    &:focus{
+      outline:none;
+    }
 }
 
 button {

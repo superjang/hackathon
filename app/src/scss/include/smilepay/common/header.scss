@@ -9,7 +9,7 @@
         position:absolute;
         left:0;
         top:0;
-        width:50px;
+        width:100px;
         height:50px;
         background:linear-gradient(to right, rgba(20,23,58,1) 0%,rgba(20,23,58,0.79) 21%,rgba(125,185,232,0) 100%);
         transition:all .5s ease-out;
@@ -31,7 +31,7 @@
 
         &:hover,
         &:focus{
-            width:100px;
+            width:50px;
         }
     }
 

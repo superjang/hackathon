@@ -2,5 +2,16 @@
 
 #app__footer{
     color:#fff;
-    background-color: $color_navi_strong;
+    background-color: #9c9c9c;
+    padding:15px;
+    font-size:11px;
+    color:#e3e3e3;
+    line-height:1.4;
+    .info__address{
+        text-align:left;
+    }
+    .text__copyright{
+        text-align:center;
+        margin-top:10px;
+    }
 }

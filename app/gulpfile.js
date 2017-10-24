@@ -50,6 +50,7 @@ gulp.task('fileinclude', function(){
         ,context: {
             'image_single': '/image/single'
             ,'image_sprite': '/image/sprite'
+            ,'image_create': '//dummyimage.com' // //dummyimage.com/150x120/2e97ff/fff.png
             ,'js': '/js'
             ,'css': '/css'
             ,'html': '/html'
@@ -89,7 +90,7 @@ gulp.task('watch', function () {
 
 gulp.task('browserSync', ['fileinclude', 'sass', 'copy:image', 'copy:js'], function () {
     return browserSync.init({
-        port : 8888,
+        port : 8008,
         server: {
             baseDir: 'build/',
             index: 'build/html/',
