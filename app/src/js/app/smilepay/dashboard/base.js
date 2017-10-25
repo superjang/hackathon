@@ -1,4 +1,12 @@
 var app = "dashboard";
+var topInfoKeyValue = {
+	percent : 50,
+	saveCash : 7800,
+	grade : 'ga' // gb, gc
+}
+var gradeChange = function(){
+	console.log(1);
+}
 var xline = ['오늘','2','3','4','5','6','7','8','9','10','11'];
 var yline = ['50','20','30','40','50','60','70','30','20']
 var graphCustom = {
@@ -34,7 +42,7 @@ var dashboardLoad = {
 		$('.basic_infomation').addClass('action');
 		setTimeout(function(){
 			cashGageCustom.setGageBar();
-		},600);
+		},500);
 	}
 }
 
@@ -103,7 +111,7 @@ var cashGageCustom = {
 		    return a.join(".")
 		};
 		$({val : 0}).animate({val : targetNumber},{
-			duration : 1000,
+			duration : 600,
 			step : function(){
 				target.text(Math.floor(this.val));
 			},
@@ -118,6 +126,7 @@ var cashGageCustom = {
 $(function(){
 	graphCustom.setGraph();
 	dashboardLoad.init();
+	$('.progress_percent .number');
 	$('.linker_infomation .linker_tab a').on('click',function(e){
 		e.preventDefault();
 		var idx = $(this).parent('li').index();
