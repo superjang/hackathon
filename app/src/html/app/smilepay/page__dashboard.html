@@ -2,19 +2,130 @@
     "page_name": "dashboard",
     "service_id": "smilepay"
 })
-<body id="app__id--smilepay" class="page__linker_list">
+<body id="app__id--smilepay" class="page__dashboard_list">
     @@include('smilepay/common/header.html', {
         "page_name": "dashboard"
     })
 
     @@include('smilepay/common/gnb.html')
+    <link rel="stylesheet" type="text/css" href="../../../js/common/library/nwagon/nwagon.css">
+    
     <section id="app__content">
-        대시보드영역
-        @@include('smilepay/common/button__goto_page_top.html')
+        <div class="basic_infomation">
+            <div class="graph_area">
+                <div class="progress">
+                    <canvas id="bar" width="110" height="110"></canvas>
+                </div>
+                <p class="progress_percent"><span class="number">50</span>%</p>
+            </div>
+            <div class="user_area">
+                <div class="linker_cash">
+                    <span class="title_text">누적링커 캐시 :</span>
+                    <span class="number">7,800</span>
+                    <span class="won">원</span>
+                </div>
+                <ul class="infomation_list">
+                    <li>
+                        <span class="list_title">현재 등급 : </span>
+                        <span class="list_content">
+                            <span class="rank">다이아</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="list_title">진행중인 링커 수 : </span>
+                        <span class="list_content">
+                            <span class="number">00</span> 개
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="linker_infomation">
+            <ul class="linker_tab">
+                <li class="selected"><a href="#">나의 링커</a></li>
+                <li><a href="#">링커 만들기</a></li>
+            </ul>
+            <div class="tab_content">
+                <div class="tab_content1">
+                    <div class="linker_graph_area">
+                        <dl class="date_select_list">
+                            <dt>구매건수</dt>
+                            <dd><a href="#">7일</a></dd>
+                            <dd><a href="#">2주</a></dd>
+                            <dd><a href="#">1달</a></dd>
+                            <dd><a href="#">2달</a></dd>
+                        </dl>
+                        <div class="graph_box" id="graph">
+                        </div>
+                    </div>
+                    <div class="linker_list_area">
+                        <ul class="linker_list">
+                            <li>
+                                <div class="image_box">
+                                    <img src="@@image_single/common/icon_event.png" alt="" class="item_image" />
+                                    <span class="sns_icon"><img src="@@image_single/common/icon_facebook.png" alt="페이스북 공유"></span>
+                                </div>
+                                <span class="date">2017.10.25 16:00:00</span>
+                                <p class="item_name">
+                                    <span class="market">[지마켓]</span>
+                                    <span class="item">해외 캐릭터 인형</span>
+                                </p>
+                                <div class="status_infomation">
+                                    <span class="state">적립대기</span>
+                                    <span class="cashback">1,000</span><span class="won">원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image_box">
+                                    <img src="@@image_single/common/temp.jpg" alt="" class="item_image" />
+                                    <span class="sns_icon"><img src="@@image_single/common/icon_facebook.png" alt="페이스북 공유"></span>
+                                </div>
+                                <span class="date">2017.10.25 16:00:00</span>
+                                <p class="item_name">
+                                    <span class="market">[지마켓]</span>
+                                    <span class="item">해외 캐릭터 인형</span>
+                                </p>
+                                <div class="status_infomation">
+                                    <span class="state">지급</span>
+                                    <span class="cashback">1,000</span><span class="won">원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image_box">
+                                    <img src="@@image_single/common/icon_event.png" alt="" class="item_image" />
+                                    <span class="sns_icon"><img src="@@image_single/common/icon_facebook.png" alt="페이스북 공유"></span>
+                                </div>
+                                <span class="date">2017.10.25 16:00:00</span>
+                                <p class="item_name">
+                                    <span class="market">[지마켓]</span>
+                                    <span class="item">해외 캐릭터 인형</span>
+                                </p>
+                                <div class="status_infomation">
+                                    <span class="state">지급</span>
+                                    <span class="cashback">1,000</span><span class="won">원</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab_content2">
+                    <ul class="linker_maker_list">
+                        <li>
+                            <a href="#">지마켓, G9, 옥션 사이트에서 원하는 상품의 상세페이지에서 공유하기를 하면 자동으로 스마일링커로 등록됩니다. <span class="icon"><img src="@@image_single/common/icon_event.png" alt="상품 찾기"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">매력적인 이벤트를 공유하면 더 많은 구매가 일어날 수 있겠죠? 지금 진행중인 이벤트를 확인해보세요. <span class="icon"><img src="@@image_single/common/icon_event.png" alt="이벤트 찾기"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
     @@include('smilepay/common/footer.html')
     @@include('smilepay/common/script.html')
     <script src="../../../js/app/smilepay/dashboard/base.js"></script>
+    <script src="../../../js/common/library/nwagon/nwagon.js"></script>
 </body>
 </html>
