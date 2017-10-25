@@ -13,6 +13,13 @@
             정렬 : 사이트별, 카테고리별
             정렬 UI 상단고정 처리
         -->
+        <div class="info__find_item">
+            <p class="text">
+                지마켓, 옥션, G9 사이트에서 스마일 링커를 원하는 상품 리스트 입니다.<br/>
+                사람들이 관심있을 상품, 매력적인 상품, 나만 아는 상품을 한번 링커해 볼까요?
+            </p>
+        </div>
+
         <ul class="list__service_site">
             <li class="item__service_site auction on">
                 <a href="#" class="tab__ad_list">
@@ -38,13 +45,13 @@
         </ul>
 
         <div class="box__list_vip auction">
-            @@include('smilepay/linker_list/list.html', {
+            @@include('smilepay/linker_list/list_item.html', {
                 "service_site": "auction"
             })
-            @@include('smilepay/linker_list/list.html', {
+            @@include('smilepay/linker_list/list_item.html', {
                 "service_site": "gmarket"
             })
-            @@include('smilepay/linker_list/list.html', {
+            @@include('smilepay/linker_list/list_item.html', {
                 "service_site": "g9"
             })
         </div>

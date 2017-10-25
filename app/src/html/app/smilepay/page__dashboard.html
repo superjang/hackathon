@@ -44,8 +44,8 @@
         </div>
         <div class="linker_infomation">
             <ul class="linker_tab">
-                <li class="selected"><a href="#">나의 링커</a></li>
-                <li><a href="#">링커 만들기</a></li>
+                <li class="selected list"><a href="#list">나의 링커</a></li>
+                <li class="share"><a href="#share">링커 만들기</a></li>
             </ul>
             <div class="tab_content">
                 <div class="tab_content1">
@@ -113,12 +113,12 @@
                 <div class="tab_content2">
                     <ul class="linker_maker_list">
                         <li>
-                            <a href="#">
+                            <a href="/html/app/smilepay/page__linker_item_list.html">
                                 <img src="@@image_single/common/search_img.jpg" alt="상품 찾기">
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/html/app/smilepay/page__linker_event_list.html">
                                 <img src="@@image_single/common/search_img2.jpg" alt="이벤트 찾기">
                             </a>
                         </li>
@@ -132,5 +132,15 @@
     @@include('smilepay/common/script.html')
     <script src="../../../js/app/smilepay/dashboard/base.js"></script>
     <script src="../../../js/common/library/nwagon/nwagon.js"></script>
+    <script>
+        $(function(){
+            var activeTab = location.hash.slice(1).split('&')[0];
+            if(activeTab === 'share'){
+                $('.linker_tab .share a').click();
+            }else if(activeTab === 'list'){
+                $('.linker_tab .list a').click();
+            }
+        })
+    </script>
 </body>
 </html>

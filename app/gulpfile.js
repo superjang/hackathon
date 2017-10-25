@@ -42,6 +42,11 @@ gulp.task('copy:js', () =>
         .pipe(gulp.dest(path.build.js))
 );
 
+gulp.task('copy:dir', () =>
+    gulp.src('src\/temp\/**\/*.*')
+        .pipe(gulp.dest('build\/temp\/'))
+);
+
 gulp.task('fileinclude', function(){
     gulp.src(path.src.html)
     .pipe(fileinclude({
@@ -87,7 +92,7 @@ gulp.task('watch', function () {
     }));
 });
 
-gulp.task('browserSync', ['fileinclude', 'sass', 'copy:image', 'copy:js'], function () {
+gulp.task('browserSync', ['fileinclude', 'sass', 'copy:image', 'copy:js', 'copy:dir'], function () {
     return browserSync.init({
         port : 8888,
         server: {
@@ -102,6 +107,9 @@ gulp.task('build', ['clean'], function(){
     gulp.start(['browserSync', 'watch'])
 });
 
+gulp.task('_', ['clean'], function(){
+    gulp.start(['browserSync'])
+});
 /**
  * TODO
  * minify, merge, uglify, html/scss/js lint, image sprite task

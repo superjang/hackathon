@@ -35,9 +35,11 @@
 
 
 /* ui boxing  */
-.ui_box {padding:15px;background-color:#FFF;border-radius:5px;box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15)}
+.ui_box {padding:15px;background-color:#FFF;border-radius:5px;box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);transition:all .2s ease-out;}
 .ui_box + .ui_box {margin-top:10px}
 .page__gateway .section {  padding: 10px 10px 20px;  background: #e8e8e8;}
+.ui_box:hover,
+.ui_box:focus{transform: scale(.9);}
 
 .page__gateway .s_card {zoom:1}
 .page__gateway .ui_box.sc_top {padding:10px 15px 15px}

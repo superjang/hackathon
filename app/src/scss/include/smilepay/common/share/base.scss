@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 .box__share_sns{
 	width:36px;
 	height:36px;
@@ -20,6 +21,8 @@
         background-color:#ffd200;
 		border-radius:50%;
 		box-shadow:0px 0px 5px 4px rgba(0,0,0,0.1);
+		background:url(../../../image/single/common/icon_share.png) no-repeat left top;
+		background-size: contain;
 		.text__description{
 		    @include ir();
         }
@@ -55,8 +58,7 @@
 		.button__share_list{
 			position: absolute;
 			z-index:20;
-			border-radius:50% 50% 2px 50%;
-			transform:scale(1) rotateZ(-135deg);
+			transform:scale(1) rotateZ(360deg);
 			border:1px solid #fff;
 		}
         .list__sns{
@@ -71,19 +73,19 @@
 
                 &.kakaotalk{
                     right:50px;
-					bottom: 60px;
+					bottom: 50px;
                 }
                 &.facebook{
                     right:100px;
-                    bottom:110px;
+                    bottom:100px;
                 }
                 &.twitter{
                     right:150px;
-                    bottom:160px;
+                    bottom:150px;
                 }
                 &.line{
                     right:200px;
-                    bottom:210px;
+                    bottom:200px;
                 }
 
 				&:hover{
@@ -94,6 +96,26 @@
     }
 }
 
+.list__vip{
+	.vip__item{
+		&.narrow_thumbnail{
+			.box__share_sns{
+				bottom:50%;
+				margin-bottom:-18px;
+			}
+		}
+
+		&.wide_thumbnail{
+			.link__vip_item{
+				.detail__vip_item{
+					.title_content{
+						color:#fff;
+					}
+				}
+			}
+		}
+	}
+}
 
 $share-icon-width:34px;
 $share-icon-height:34px;

@@ -3,13 +3,18 @@
     "service_id": "smilepay"
 })
 <body id="app__id--smilepay" class="page__intro">
-    @@include('smilepay/common/gnb.html')
-    <section id="app__content">
-        @@include('smilepay/intro/intro.html')
-    </section>
+    @@include('smilepay/intro/intro.html')
 
-    @@include('smilepay/common/footer.html')
     @@include('smilepay/common/script.html')
     <script src="../../../js/app/smilepay/main/intro.js"></script>
+    <script>
+        $(function(){
+            setTimeout(function(){
+                $('.box_intro_box').animate({opacity:0}, 100, function(){
+                    location.href = '/html/app/smilepay/page__gateway.html';
+                });
+            },2000)
+        })
+    </script>
 </body>
 </html>
