@@ -8,17 +8,20 @@
     })
 
     @@include('smilepay/common/gnb.html')
+    <link rel="stylesheet" type="text/css" href="../../../js/common/library/nwagon/nwagon.css">
+    
     <section id="app__content">
         <div class="basic_infomation">
             <div class="graph_area">
                 <div class="progress">
-                    <canvas id="circlebar" width="100" height="100"></canvas>
+                    <canvas id="bar" width="110" height="110"></canvas>
                 </div>
+                <p class="progress_percent"><span class="number">50</span>%</p>
             </div>
             <div class="user_area">
                 <div class="linker_cash">
                     <span class="title_text">누적링커 캐시 :</span>
-                    <span class="number">800</span>
+                    <span class="number">7,800</span>
                     <span class="won">원</span>
                 </div>
                 <ul class="infomation_list">
@@ -45,7 +48,14 @@
             <div class="tab_content">
                 <div class="tab_content1">
                     <div class="linker_graph_area">
-                        <div class="graph_box">
+                        <dl class="date_select_list">
+                            <dt>구매건수</dt>
+                            <dd><a href="#">7일</a></dd>
+                            <dd><a href="#">2주</a></dd>
+                            <dd><a href="#">1달</a></dd>
+                            <dd><a href="#">2달</a></dd>
+                        </dl>
+                        <div class="graph_box" id="graph">
                         </div>
                     </div>
                     <div class="linker_list_area">
@@ -61,9 +71,38 @@
                                     <span class="item">해외 캐릭터 인형</span>
                                 </p>
                                 <div class="status_infomation">
+                                    <span class="state">적립대기</span>
+                                    <span class="cashback">1,000</span><span class="won">원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image_box">
+                                    <img src="@@image_single/common/temp.jpg" alt="" class="item_image" />
+                                    <span class="sns_icon"><img src="@@image_single/common/icon_facebook.png" alt="페이스북 공유"></span>
+                                </div>
+                                <span class="date">2017.10.25 16:00:00</span>
+                                <p class="item_name">
+                                    <span class="market">[지마켓]</span>
+                                    <span class="item">해외 캐릭터 인형</span>
+                                </p>
+                                <div class="status_infomation">
                                     <span class="state">지급</span>
-                                    <span class="cashback">1,000</span>
-                                    <span class="won">원</span>
+                                    <span class="cashback">1,000</span><span class="won">원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image_box">
+                                    <img src="@@image_single/common/icon_event.png" alt="" class="item_image" />
+                                    <span class="sns_icon"><img src="@@image_single/common/icon_facebook.png" alt="페이스북 공유"></span>
+                                </div>
+                                <span class="date">2017.10.25 16:00:00</span>
+                                <p class="item_name">
+                                    <span class="market">[지마켓]</span>
+                                    <span class="item">해외 캐릭터 인형</span>
+                                </p>
+                                <div class="status_infomation">
+                                    <span class="state">지급</span>
+                                    <span class="cashback">1,000</span><span class="won">원</span>
                                 </div>
                             </li>
                         </ul>
@@ -87,5 +126,6 @@
     @@include('smilepay/common/footer.html')
     @@include('smilepay/common/script.html')
     <script src="../../../js/app/smilepay/dashboard/base.js"></script>
+    <script src="../../../js/common/library/nwagon/nwagon.js"></script>
 </body>
 </html>

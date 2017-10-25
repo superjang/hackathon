@@ -14,7 +14,7 @@ const path = {
         ,html: 'src\/html\/**\/*.html'
         ,style: 'src\/scss\/**\/*.scss'
         ,image: 'src\/image\/single\/**'
-        ,js: 'src\/js\/**\/*.js'
+        ,js: 'src\/js\/**\/*.*'
     },
     build: {
         root: 'build'
