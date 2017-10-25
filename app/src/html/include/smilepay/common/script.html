@@ -20,7 +20,6 @@
 
             });
         });
-    });
 
 
     $('.list__sns').on('click', '.button__share_sns', $.proxy(shareItem, this));
@@ -63,4 +62,24 @@
 
         $('.box__share_sns.on').find('.button__share_list').trigger('click');
     }
+
+        $('.list__service_site .item__service_site').on('click', function(){
+            $('.list__service_site .item__service_site').removeClass('on')
+            $(this).addClass('on');
+
+            switch($(this).data('service-name')){
+                case 'auction' :
+                    $('.box__list_vip').removeClass('gmarket g9').addClass('auction');
+                    break;
+                case 'gmarket' :
+                    $('.box__list_vip').removeClass('auction g9').addClass('gmarket');
+                    break;
+                case 'g9' :
+                    $('.box__list_vip').removeClass('gmarket auction').addClass('g9');
+                    break;
+            }
+
+        })
+
+    });
 </script>

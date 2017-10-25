@@ -33,6 +33,7 @@ $card_text_color: #fff;
       float:left;
       background-color:$card_color;
       border-right:1px solid $color_navi;
+      transition:background-color .4s ease-out;
       &:last-child{
         border:none;
       }
