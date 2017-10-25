@@ -10,7 +10,7 @@ function openCheck() {
         for(i=0; i < $checkboxlength; i++) {
             if($checkbox[i].checked) cnt++;
         }
-        if(cnt == 3) {
+        if(cnt == 2) {
             $btn.addClass("active");
         }else{
             $btn.removeClass("active");
