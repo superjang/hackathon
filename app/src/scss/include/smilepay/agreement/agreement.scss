@@ -55,13 +55,13 @@
   height: 60px;
   line-height: 60px;
   position: fixed;
-  bottom: 10px;
-  left: 10px;
-  width:94%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   display: block;
-  border-radius: 10px;
+  border-radius: 0;
   font-size: 15px;
-  color:#fff;
+  color: #fff;
   background: #a7aab3;
 }
 .agreement .btn_agreement.active {
