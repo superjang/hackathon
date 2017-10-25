@@ -33,11 +33,17 @@
         //display:none;
 		.icon{
 			border-radius:50%;
+			overflow:hidden;
+			background-image:url(../../../image/single/common/ecoupon.png);
+			background-size:130px auto;
+			background-position: 0px 0px;
 			&.kakaotalk{
 				transition: all .1s cubic-bezier(0.42, 0, 0.59, 1.06);
+				background-position:-1px -17px;
 			}
 			&.facebook{
 				transition: all .18s cubic-bezier(0.42, 0, 0.59, 1.06);
+				background-position:-41px -17px;
 			}
 			&.twitter{
 				transition: all .24s cubic-bezier(0.42, 0, 0.59, 1.06);
@@ -71,19 +77,19 @@
                 bottom:0;
                 background-color:rgba(255, 255, 255, 1);
 
-                &.kakaotalk{
+                &:nth-child(1){
                     right:50px;
 					bottom: 50px;
                 }
-                &.facebook{
+				&:nth-child(2){
                     right:100px;
                     bottom:100px;
                 }
-                &.twitter{
+				&:nth-child(3){
                     right:150px;
                     bottom:150px;
                 }
-                &.line{
+				&:nth-child(4){
                     right:200px;
                     bottom:200px;
                 }
@@ -218,37 +224,6 @@ $share-icon-bounce-time:.4s;
 				-moz-animation: flowery-pop-close $share-icon-bounce-time infinite;
 				-o-animation: flowery-pop-close $share-icon-bounce-time infinite;
 				animation: flowery-pop-close $share-icon-bounce-time forwards;
-			}
-		}
-		li:last-child{
-			-webkit-transform:rotate(-180deg);
-			transform:rotate(-180deg);
-			.icon{
-				-webkit-transform:rotate(180deg);
-				transform:rotate(180deg);
-			}
-		}
-		@for $i from 1 through 10{
-			li:nth-child(#{$i}){
-				.icon{
-					$animation-delay : (($i)-1) * -0.04s;
-					animation-delay:$animation-delay;
-				}
-			}
-		}
-		@for $i from 3 through 10{
-			&.length#{$i}{
-				@for $j from 2 through $i{
-					li:nth-child(#{$j}){
-						$rotate-deg : 180/(($i)-1)*(($j)-1) * 1deg;
-						-webkit-transform:rotate($rotate-deg * -1);
-						transform:rotate($rotate-deg * -1);
-						.icon{
-							-webkit-transform:rotate($rotate-deg);
-							transform:rotate($rotate-deg);
-						}
-					}
-				}
 			}
 		}
 	}

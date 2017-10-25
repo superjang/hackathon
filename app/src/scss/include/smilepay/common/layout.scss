@@ -34,17 +34,15 @@ $header_height: 50px;
   right:20px;
   bottom:20px;
   display:block;
-  background-color: #000;
+  background-color: rgba(0,0,0,.3);
   border-radius:5px;
   border:1px solid #fff;
   z-index:200;
-  opacity:.3;
   transition:all .6s ease;
-  &:hover,
-  &:focus{
-    //opacity:1;
-  }
-  .ir{
-    @include ir();
+  .text{
+    color: #fff;
+    line-height: 43px;
+    display: block;
+    text-align: center;
   }
 }

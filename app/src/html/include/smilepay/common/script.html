@@ -13,11 +13,11 @@
         $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
             FB.init({
                 appId: '1922358581124623',
-                version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+                version: 'v2.7'
             });
-            $('#loginbutton,#feedbutton').removeAttr('disabled');
+
             FB.getLoginStatus(function(){
-                console.log("asdf")
+
             });
         });
     });
@@ -27,45 +27,40 @@
 
     function shareItem(event){
         var target = $(event.currentTarget),
-            snsType = target.data('sns-type');
+            snsType = target.data('sns-type'),
+            selectItem = target.parents('.vip__item'),
+            snsData = {
+                title: selectItem.data('sns-title'),
+                description: selectItem.data('sns-description'),
+                image: selectItem.data('sns-image'),
+                url: selectItem.data('sns-url')
+            };
 
         switch(snsType){
             case 'facebook' :
                 FB.ui({
-                    method: 'feed',
-//                    link: 'http://localhost:8008/html/app/smilepay/page__linker_list.html#jaewon=goodboy&hyo=goodgirl',
-                    link: 'http://hkta18-w1.koreacentral.cloudapp.azure.com/html/app/smilepay/page__linker_list.html#jaewon=goodboy&hyo=goodgirl',
-//                    link:'http://itempage3.auction.co.kr/DetailView.aspx?itemno=B393454794',
-                    caption: 'An example caption',
-                    quote: 'jaewjang님이 지접 구매하신 상품입니다.',
-                    hashtag: '#SMILELINKER',
-                    mobile_iframe: true,
-//                    quote: '<strong>asdf</strong> zzz!!!',
-//                    href: 'https://developers.facebook.com/docs/',
-//                    redirect_uri:' http://superjang.com',
-//                    method: 'share_open_graph',
-                    action_type: 'og.likes',
-                    action_properties: JSON.stringify({
-                        object: 'http://itempage3.auction.co.kr/DetailView.aspx?itemno=B393454794' //https://developers.facebook.com/docs/',
-                    })
-//                    method: "feed",
-//                    action_type: 'og.likes',
-//                    action_properties: JSON.stringify({
-//                        name: '타이틀 재원',
-//                        caption: '캡션 재원',
-//                        link: 'http://superjang.com',
-//                        description: '디스크립션 설명',
-//                        picture: 'https://avatars0.githubusercontent.com/u/1406145?s=88&v=4'
-//                    }),
-
+                        method: 'share_open_graph',
+                        action_type: 'og.shares',
+                        display: 'popup',
+                        hashtag: '#SmileLinker',
+                        mobile_iframe: true,
+                        action_properties: JSON.stringify({
+                            object: {
+                                'og:url': snsData.url,
+                                'og:title': snsData.title,
+                                'og:description': snsData.description,
+                                'og:image': snsData.image
+                            }
+                        })
                 }, function(response){
-                    // Debug response (optional)
-                    console.log(response);
+
                 });
                 break;
-            case 'twitter' :
+            case 'kakaotalk' :
+                alert('준비중입니다.')
                 break;
         }
 
+        $('.box__share_sns.on').find('.button__share_list').trigger('click');
     }
 </script>
