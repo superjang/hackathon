@@ -9,23 +9,47 @@
 
     @@include('smilepay/common/gnb.html')
     <section id="app__content">
+        <!-- TODO
+            정렬 : 사이트별, 카테고리별
+            정렬 UI 상단고정 처리
+        -->
         <ul class="list__service_site">
             <li class="item__service_site auction on">
-                @@include('smilepay/linker_list/list.html', {
-                    "service_site": "auction"
-                })
+                <a href="#" class="tab__ad_list">
+                    <span class="icon">
+                        <span class="ir">Auction</span>
+                    </span>
+                </a>
             </li>
             <li class="item__service_site gmarket">
-                @@include('smilepay/linker_list/list.html', {
-                    "service_site": "gmarket"
-                })
+                <a href="#" class="tab__ad_list">
+                    <span class="icon">
+                        <span class="ir">Gmarket</span>
+                    </span>
+                </a>
             </li>
             <li class="item__service_site g9">
-                @@include('smilepay/linker_list/list.html', {
-                    "service_site": "g9"
-                })
+                <a href="#" class="tab__ad_list">
+                    <span class="icon">
+                        <span class="ir">G9</span>
+                    </span>
+                </a>
             </li>
         </ul>
+
+        <div class="box__list_vip auction">
+            @@include('smilepay/linker_list/list.html', {
+                "service_site": "auction"
+            })
+            @@include('smilepay/linker_list/list.html', {
+                "service_site": "gmarket"
+            })
+            @@include('smilepay/linker_list/list.html', {
+                "service_site": "g9"
+            })
+        </div>
+
+        @@include('smilepay/common/button__goto_page_top.html')
     </section>
 
     @@include('smilepay/common/footer.html')

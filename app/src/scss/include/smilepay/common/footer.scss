@@ -1,8 +1,17 @@
 @charset "UTF-8";
 
 #app__footer{
-    padding:10px 15px;
     color:#fff;
-    width:100%;
-    background-color: $color_navi;
+    background-color: #9c9c9c;
+    padding:15px;
+    font-size:11px;
+    color:#e3e3e3;
+    line-height:1.4;
+    .info__address{
+        text-align:left;
+    }
+    .text__copyright{
+        text-align:center;
+        margin-top:10px;
+    }
 }

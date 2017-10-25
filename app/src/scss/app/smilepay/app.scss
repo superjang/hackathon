@@ -17,3 +17,13 @@
 @import "../../include/smilepay/linker_list/list";
 
 // layout
+
+
+//gateway
+@import "../../include/smilepay/gateway/common";
+@import "../../include/smilepay/gateway/header";
+@import "../../include/smilepay/gateway/gnb";
+@import "../../include/smilepay/gateway/body";
+
+//agreement
+@import "../../include/smilepay/agreement/agreement";

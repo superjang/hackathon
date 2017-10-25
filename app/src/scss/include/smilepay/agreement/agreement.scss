@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+/* layout*/
+.page__agreement{ background: #eeeff4;}
+.page__agreement .agreement {
+  padding: 10px 10px 20px;
+}
+
+//visual
+.agreement .visual {
+  padding:40px 10px 20px 10px;
+  text-align: center;
+}
+.agreement .visual h2 {
+  font-size:40px;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  color:$color_navi;
+  font-weight: bold;
+}
+.agreement .visual .desc{
+  font-size: 15px;
+  line-height: 24px;
+
+}
+
+//guide
+.agreement .guide{
+  background: #fff;
+  border-radius: 10px;
+  padding:20px;
+  margin-bottom: 20px;
+}
+.agreement .guide p{
+  font-size: 13px;
+  line-height: 22px;
+
+}
+
+//agree_list
+.agreement .agree_list{width:100%;  }
+.agreement .agree_list ul{overflow:auto; background:#fff; padding-top:10px;  }
+.agreement .agree_list ul li{
+  height: 30px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  font-size: 14px;
+  padding: 0 10px;
+}
+.agreement .agree_list ul li:last-child{border:0; margin-bottom: 0; }
+
+
+//btn
+.agreement .btn_agreement{
+  height: 60px;
+  line-height: 60px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  width:94%;
+  display: block;
+  border-radius: 10px;
+  font-size: 15px;
+  color:#fff;
+  background: #a7aab3;
+}
+.agreement .btn_agreement.active {
+  background: $color_yellow;
+  color:$color_navi;
+
+}
+
+
+
+//custom checkbox
+.checks {position: relative;}
+.checks input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0
+}
+.checks input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.checks input[type="checkbox"] + label:before {  /* 가짜 체크박스 */
+  content: ' ';
+  display: inline-block;
+  width: 21px;  /* 체크박스의 너비를 지정 */
+  height: 21px;  /* 체크박스의 높이를 지정 */
+  line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */
+  margin: -2px 8px 0 0;
+  text-align: center;
+  vertical-align: middle;
+  background: #fafafa;
+  border: 1px solid #cacece;
+  border-radius : 3px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+}
+.checks input[type="checkbox"] + label:active:before,
+.checks input[type="checkbox"]:checked + label:active:before {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.checks input[type="checkbox"]:checked + label:before {  /* 체크박스를 체크했을때 */
+  content: '\2714';  /* 체크표시 유니코드 사용 */
+  color: #99a1a7;
+  text-shadow: 1px 1px #fff;
+  background: #e9ecee;
+  border-color: #adb8c0;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+}
+
+.checks.small input[type="checkbox"] + label {
+  font-size: 12px;
+}
+
+.checks.small input[type="checkbox"] + label:before {
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+  font-size: 11px;
+}
+
+.checks.etrans input[type="checkbox"] + label {
+  padding-left: 30px;
+}
+.checks.etrans input[type="checkbox"] + label:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  opacity: .6;
+  box-shadow: none;
+  border-color: #6cc0e5;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+.checks.etrans input[type="checkbox"]:checked + label:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity:1;
+  background: transparent;
+  border-color:transparent #6cc0e5 #6cc0e5 transparent;
+  border-top-color:transparent;
+  border-left-color:transparent;
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+
+.no-csstransforms .checks.etrans input[type="checkbox"]:checked + label:before {
+  /*content:"\2713";*/
+  content: "\2714";
+  top: 0;
+  left: 0;
+  width: 21px;
+  line-height: 21px;
+  color: #6cc0e5;
+  text-align: center;
+  border: 1px solid #6cc0e5;
+}
+
+
+
+/*tooltip*/
+.arrow_box {
+  position: relative;
+  background: #88b7d5;
+  border: 4px solid #c2e1f5;
+}
+.arrow_box:after, .arrow_box:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.arrow_box:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: #FFF;
+  border-width: 15px;
+  margin-left: -15px;
+}
+.arrow_box:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-bottom-color: #c2e1f5;
+  border-width: 18px;
+  margin-left: -18px;
+}
+
+#layer_popup.active{
+  transform: translate3d(-50%, -50%, 0);
+
+}
+#layer_popup{
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate3d(-50%, -50%, 0);
+  padding:20px;
+  background: #ffffff;
+  border-radius: 10px;
+  z-index: 100;
+  min-width: 200px;
+  transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1.0);
+  transform: translate3d(-50%, 200%, 0);
+
+}
+#layer_popup .msg{
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+}
+#layer_popup .confirm{
+  display: block;
+  border-radius: 4px;
+  background: #fcd108;
+  color: #243069;
+  font-size: 17px;
+  margin: 0px auto;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 30px;
+}
+
+#dimmed{
+  position: fixed;
+  top:0%;
+  left:0%;
+  width:100%;
+  height:100%;
+  background: #000;
+  opacity: 0.6;
+}

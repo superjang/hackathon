@@ -1,0 +1,24 @@
+@@include('smilepay/common/head.html', {
+    "page_name": "gateway",
+    "service_id": "smilepay"
+})
+<body id="app__id--smilepay" class="page__gateway">
+    @@include('smilepay/gateway/smilepayApp_header.html')
+    @@include('smilepay/gateway/smilepayApp_gnb.html')
+
+    <section id="app__content">
+        <div class="section">
+            <!--기존 smileapp contents -->
+            @@include('smilepay/gateway/smilepayApp_body.html')
+
+            <!--스마일 링커 add on -->
+            @@include('smilepay/gateway/smileLinker.html')
+        </div>
+    </section>
+
+    @@include('smilepay/common/script.html')
+    <script src="../../../js/app/smilepay/main/base.js"></script>
+    <script src="../../../js/app/smilepay/gateway/gnb.js"></script>
+
+</body>
+</html>

@@ -1,20 +1,19 @@
 @@include('smilepay/common/head.html', {
-    "page_name": "dashboard",
+    "page_name": "intro",
     "service_id": "smilepay"
 })
-<body id="app__id--smilepay" class="page__linker_list">
+<body id="app__id--smilepay" class="page__main">
     @@include('smilepay/common/header.html', {
-        "page_name": "dashboard"
+        "page_name": "intro"
     })
 
     @@include('smilepay/common/gnb.html')
     <section id="app__content">
-        대시보드영역
-        @@include('smilepay/common/button__goto_page_top.html')
+        @@include('smilepay/intro/intro.html')
     </section>
 
     @@include('smilepay/common/footer.html')
     @@include('smilepay/common/script.html')
-    <script src="../../../js/app/smilepay/dashboard/base.js"></script>
+    <script src="../../../js/app/smilepay/main/intro.js"></script>
 </body>
 </html>
