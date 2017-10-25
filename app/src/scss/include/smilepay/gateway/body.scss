@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+
+.page__gateway .abs .price strong {display:inline-block;font-size:25px;font-weight:bold;padding-right:2px;margin-top:-2px;vertical-align:middle}
+.page__gateway .abs .price .spr {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 3px;
+  width: 5px;
+  height: 9px;
+  background-position: -57px -171px;
+}
+.page__gateway .abs.cash_info .linker_bt {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0;
+  width: 48px;
+  height: 28px;
+  color: #222;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #dedede;
+  overflow: hidden;
+  zoom: 1;
+}
+
+
+
+/* main card logo */
+.page__gateway .ui_box.bank_area {margin:10px 0 0 0;padding:15px;position:static;border:0}
+.page__gateway .s_card.regist_area {padding:0}
+.page__gateway .cardbox {position:relative;float:right;width:120px;height:74px}
+.page__gateway .cardbox>img{width:100%}
+.page__gateway .cardbox .spr_logo {position:absolute;top:10px;right:10px;margin:0}
+.page__gateway .cardbox strong {position:absolute;bottom:10px;left:10px;color:#fff;font-size:11px;font-weight:normal;text-shadow:1px 1px rgba(0,0,0,.25)}
+.page__gateway .cardbox.bt_add {height:74px;margin-top:6px;border-radius:5px}
+.page__gateway .cardbox.bt_add .spr {position:absolute;top:16px;left:50%;width:24px;height:24px;margin:0 0 0 -12px;background-position:-48px -182px}
+.page__gateway .cardbox.bt_add .spr {background-position:-552px -88px}
+.page__gateway .cardbox.bt_add .tx {position:absolute;top:47px;left:0;width:100%;margin-top:0;font-size:11px;color:#222;text-align:center;font-weight:normal}
+
+
+/* regist_area card  */
+.regist_area .card30002{background-color:#6575a8} /* 신한카드 */
+.regist_area .card30002 .ic_logo .spr_logo{background-position:0 -78px}
+.p_sp .regist_area .card30002 .ic_logo .spr_logo{background-position:-484px -52px}
+.regist_area .card30003{background-color:#e73541} /* 비씨카드 */
+.regist_area .card30003 .ic_logo .spr_logo{background-position:-368px -78px}
+.p_sp .regist_area .card30003 .ic_logo .spr_logo{background-position:-363px -52px}
+.regist_area .card30004{background-color:#6e7689} /* 현대카드 */
+.regist_area .card30004 .ic_logo .spr_logo{background-position:-276px -39px}
+.p_sp .regist_area .card30004 .ic_logo .spr_logo{background-position:-242px -39px}
+.regist_area .card30005{background-color:#0055c9} /* 삼성카드 */
+.regist_area .card30005 .ic_logo .spr_logo{background-position:-92px -78px}
+.p_sp .regist_area .card30005 .ic_logo .spr_logo{background-position:-121px -52px}
+.regist_area .card30006{background-color:#938a83} /* KB카드 */
+.regist_area .card30006 .ic_logo .spr_logo{background-position:-368px -39px}
+.p_sp .regist_area .card30006 .ic_logo .spr_logo{background-position:-121px -104px}
+.regist_area .card30007{background-color:#58a198} /* 하나카드 */
+.regist_area .card30007 .ic_logo .spr_logo{background-position:-92px -39px}
+.p_sp .regist_area .card30007 .ic_logo .spr_logo{background-position:-847px -52px}
+.regist_area .card30008{background-color:#f35748} /* 롯데카드 */
+.regist_area .card30008 .ic_logo .spr_logo{background-position:-276px -78px}
+.p_sp .regist_area .card30008 .ic_logo .spr_logo{background-position:-726px -52px}
+.regist_area .card30009{background-color:#849dbb} /* 씨티카드 */
+.regist_area .card30009 .ic_logo .spr_logo{background-position:-184px -78px}
+.p_sp .regist_area .card30009 .ic_logo .spr_logo{background-position:0 -104px}
+.regist_area .card30010{background-color:#87a569} /* NH카드 */
+.regist_area .card30010 .ic_logo .spr_logo{background-position:0 -39px}
+.p_sp .regist_area .card30010 .ic_logo .spr_logo{background-position:0 -52px}
+.regist_area .card30028{background-color:#338177} /* 외환카드 */
+.regist_area .card30028 .ic_logo .spr_logo{background-position:-184px -39px}
+.p_sp .regist_area .card30028 .ic_logo .spr_logo{background-position:-605px -52px}
+.regist_area .card30042{background-color:#0072b9} /* 수협은행카드 */
+.regist_area .card30042 .ic_logo .spr_logo{background-position:-368px -665px}
+.p_sp .regist_area .card30042 .ic_logo .spr_logo{background-position:-242px 0}
+.regist_area .card30043{background-color:#6675a8} /* 제주은행카드 */
+.regist_area .card30043 .ic_logo .spr_logo{background-position:-92px -702px}
+.p_sp .regist_area .card30043 .ic_logo .spr_logo{background-position:-363px 0}
+.regist_area .card30044{background-color:#1b3f9a} /* 광주은행카드 */
+.regist_area .card30044 .ic_logo .spr_logo{background-position:-184px -702px}
+.p_sp .regist_area .card30044 .ic_logo .spr_logo{background-position:-484px 0}
+.regist_area .card30045{background-color:#1a47bb} /* 전북은행카드 */
+.regist_area .card30045 .ic_logo .spr_logo{background-position:-368px -704px}
+.p_sp .regist_area .card30045 .ic_logo .spr_logo{background-position:-605px 0}
+
+/* bank_area logo */
+.bank_area .lst_bank .spr_logo{width:50px;height:27px;margin:0 auto}
+.bank_area .lst_bank .bank30011 .spr_logo{background-position:0 -433px}
+.bank_area .lst_bank .bank30012 .spr_logo{background-position:-52px -433px}
+.bank_area .lst_bank .bank30013 .spr_logo{background-position:-104px -433px}
+.bank_area .lst_bank .bank30014 .spr_logo{background-position:-156px -433px}
+.bank_area .lst_bank .bank30015 .spr_logo{background-position:-208px -433px}
+.bank_area .lst_bank .bank30016 .spr_logo{background-position:-260px -433px}
+.bank_area .lst_bank .bank30017 .spr_logo{background-position:-312px -433px}
+.bank_area .lst_bank .bank30018 .spr_logo{background-position:-364px -433px}
+.bank_area .lst_bank .bank30019 .spr_logo{background-position:-416px -433px}
+.bank_area .lst_bank .bank30020 .spr_logo{background-position:-156px -462px}
+.bank_area .lst_bank .bank30021 .spr_logo{background-position:0 -462px}
+.bank_area .lst_bank .bank30022 .spr_logo{background-position:-52px -462px}
+.bank_area .lst_bank .bank30023 .spr_logo{background-position:-104px -462px}
+.bank_area .lst_bank .bank30024 .spr_logo{background-position:-208px -462px}
+.bank_area .lst_bank .bank30025 .spr_logo{background-position:-260px -462px}
+.bank_area .lst_bank .bank30026 .spr_logo{background-position:-312px -462px}
+.bank_area .lst_bank .bank30047 .spr_logo{background-position:0 -491px}
+.bank_area .lst_bank .bank30048 .spr_logo{background-position:-52px -491px}
+.bank_area .lst_bank .bank30049 .spr_logo{background-position:-104px -491px}
+.bank_area .lst_bank .bank30050 .spr_logo{background-position:-156px -491px}
+.bank_area .lst_bank .card30002 .spr_logo{background-position:-260px -520px} /* 신한카드 */
+.bank_area .lst_bank .card30003 .spr_logo{background-position:0  -549px} /* 비씨카드 */
+.bank_area .lst_bank .card30004 .spr_logo{background-position:-156px -520px} /* 현대카드 */
+.bank_area .lst_bank .card30005 .spr_logo{background-position:-312px -520px} /* 삼성카드 */
+.bank_area .lst_bank .card30006 .spr_logo{background-position:-208px -520px} /* KB카드 */
+.bank_area .lst_bank .card30007 .spr_logo{background-position:-52px -520px} /* 하나카드 */
+.bank_area .lst_bank .card30008 .spr_logo{background-position:-416px -520px} /* 롯데카드 */
+.bank_area .lst_bank .card30009 .spr_logo{background-position:-364px -520px} /* 씨티카드 */
+.bank_area .lst_bank .card30010 .spr_logo{background-position:0 -520px} /* NH카드 */
+.bank_area .lst_bank .card30028 .spr_logo{background-position:-104px -520px} /* 외환카드 */
+.bank_area .lst_bank .card30042 .spr_logo{background-position:-52px -549px} /* 수협은행카드 */
+.bank_area .lst_bank .card30043 .spr_logo{background-position:-104px -549px} /* 제주은행카드 */
+.bank_area .lst_bank .card30044 .spr_logo{background-position:-156px -549px} /* 광주은행카드 */
+.bank_area .lst_bank .card30045 .spr_logo{background-position:-208px -549px} /* 전북은행카드 */
+.bank_area .lst_bank .phone30053 .spr_logo{background-position:-208px -636px} /* SK텔레콤 */
+.bank_area .lst_bank .phone30054 .spr_logo{background-position:-260px -636px} /* KT */
+.bank_area .lst_bank .phone30055 .spr_logo{background-position:-312px -636px} /* LG */
+.bank_area .lst_bank .phone30056 .spr_logo{background-position:-364px -636px} /* 알뜰폰 */
+
+
+/*스마일링커*/
+.page__gateway .smile_linker {
+  padding: 4px 6px 2px;
+  background-color: $color_navi;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 11px;
+}
+.page__gateway .gnb .cont dl dt .new{
+  background-color: $color_navi;
+  margin-left: 5px;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 10px;
+  border-radius: 3px;
+}

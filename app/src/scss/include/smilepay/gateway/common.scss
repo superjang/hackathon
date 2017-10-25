@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+.blind,legend{overflow:hidden;position:absolute;top:-999px !important;left:-999px !important;width:1px;height:1px;font-size:1px;line-height:100px;white-space:nowrap}
+
+
+/* common img */
+.spr{overflow:hidden;display:block;background:url(//pics.ebay.co.kr/mysmilepay/spr_mysmilepay.png) no-repeat;line-height:500px;background-size:500px auto}
+.spr_logo{overflow:hidden;display:block;background:url(//pics.ebay.co.kr/mysmilepay/spr_logo.png) no-repeat;line-height:500px;background-size:500px auto}
+.frm_wrap .ds_form {position:relative;display:inline-block;background:url(//pics.ebay.co.kr/mysmilepay/spr_form.png) no-repeat 0 0;vertical-align:middle;z-index:1;overflow:hidden;zoom:1;background-size:100px auto}
+.p_sp .spr{background-image:url(//pics.ebay.co.kr/mysmilepay/spr_mysmilepay_p.png);background-size:auto}
+.p_sp .spr_logo{background-image:url(//pics.ebay.co.kr/mysmilepay/spr_logo_p.png);background-size:auto}
+.p_sp .frm_wrap .ds_form {background-image:url(//pics.ebay.co.kr/mysmilepay/spr_form_p.png);background-size:auto auto}
+
+
+/* layout */
+.page__gateway{
+  background-color: #E8E8E8;
+
+}
+
+.page__gateway #header {
+  height: 78px;
+  border-bottom: 0;
+  background-color: #E8E8E8;
+  overflow: hidden;
+  position: relative;
+}
+
+.page__gateway #app__content {
+  background-color: #E8E8E8;
+}
+
+
+
+
+/* ui boxing  */
+.ui_box {padding:15px;background-color:#FFF;border-radius:5px;box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15)}
+.ui_box + .ui_box {margin-top:10px}
+.page__gateway .section {  padding: 10px 10px 20px;  background: #e8e8e8;}
+
+.page__gateway .s_card {zoom:1}
+.page__gateway .ui_box.sc_top {padding:10px 15px 15px}
+.page__gateway .s_card:after {display:block;clear:both;content:" "}
+.page__gateway .s_card p {float:left;margin-top:23px;font-size:14px;line-height:17px;color:#444}
+.page__gateway .s_card p.rs_txt {color:#aaa}
+
+.page__gateway .m_tit {float:left;font-size:20px;font-weight:normal}
+.page__gateway .abs {float:right;text-align:right;margin-bottom:10px}
+.page__gateway .cash_info + dl {border-top:1px solid #dedede;}
+
+
+.page__gateway .cash_info + dl {border-top:1px solid #dedede;}
+.page__gateway .abs + dl dt {font-weight:normal}
+.page__gateway .abs + dl dd {text-align:right}
+.page__gateway .cash_info + dl dt>span {font-size:12px;color:#aaa}
+.page__gateway .cash_info + dl dd a {display:inline-block;font-size:16px;font-weight:bold;color:#222}
+.page__gateway .cash_info + dl dd a>em {font-weight:normal}
+.page__gateway .cash_info + dl dd a .spr {display:inline-block;vertical-align:middle;margin:-3px 0 0 3px;width:5px;height:9px;background-position:-47px -166px}
+.page__gateway .cash_info + dl dd a .spr {width:5px;height:9px;background-position:-86px -133px}
+
+.page__gateway .s_card {zoom:1}
+.page__gateway .ui_box.sc_top {padding:10px 15px 15px}
+.page__gateway .s_card:after {display:block;clear:both;content:" "}
+.page__gateway .s_card p {float:left;margin-top:23px;font-size:14px;line-height:17px;color:#444}
+.page__gateway .s_card p.rs_txt {color:#aaa}
+.p_sp.page__gateway .s_card p.rs_txt {margin-top:29px;color:#aaa;font-size:12px}
+.page__gateway .m_tit {float:left;font-size:20px;font-weight:normal}
+.p_sp.page__gateway .m_tit {font-size:16px;font-weight:bold}
+.page__gateway .abs {float:right;text-align:right;margin-bottom:10px}
+.page__gateway .abs .price {display:block;padding-bottom:8px;font-size:14px;color:#027fe9}
+.page__gateway .abs .price strong {display:inline-block;font-size:25px;font-weight:bold;padding-right:2px;margin-top:-2px;vertical-align:middle}
+.p_sp.page__gateway .abs .price strong {margin-top:0;font-size:20px;font-weight:bold}
+.page__gateway .abs .price strong+span {display:inline-block;vertical-align:middle}
+.page__gateway .abs .price .spr {display:inline-block;vertical-align:middle;margin-left:3px;width:5px;height:9px;background-position:-57px -171px}
+.p_sp.page__gateway .abs .price .spr {width:5px;height:9px;background-position:-60px -172px}
+.page__gateway .abs.cash_info .linker_bt {display:inline-block;margin-right:10px;padding:0;width:48px;height:28px;color:#222;font-size:12px;line-height:30px;text-align:center;border:1px solid #dedede;overflow:hidden;zoom:1;}
+.page__gateway .abs.cash_info .linker_bt + .linker_bt {margin-left:-9px}
+.page__gateway .abs + dl {clear:right;zoom:1}
+.page__gateway .abs + .rs_txt {clear:right;margin-top:13px;font-size:14px;color:#aaa;zoom:1}
+.p_sp.page__gateway .abs + .rs_txt {padding-top:6px;font-size:12px}
+.page__gateway .abs + dl:after {display:block;clear:both;content:" "}
+.page__gateway .cash_info + dl {border-top:1px solid #dedede;}
+.page__gateway .abs + dl dt, .page__gateway .abs + dl dd {float:left;margin-top:13px;width:50%;font-size:16px;white-space:nowrap}
+.p_sp.page__gateway .abs + dl dt, .p_sp.page__gateway .abs + dl dd {font-size:14px}
+.page__gateway .abs + dl dt {font-weight:normal}
+.page__gateway .abs + dl dd {text-align:right}
+.page__gateway .cash_info + dl dt>span {font-size:12px;color:#aaa}
+.page__gateway .cash_info + dl dd a {display:inline-block;font-size:16px;font-weight:bold;color:#222}
+.page__gateway .cash_info + dl dd a>em {font-weight:normal;     font-style: normal;}
+.page__gateway .cash_info + dl dd a .spr {display:inline-block;vertical-align:middle;margin:-3px 0 0 3px;width:5px;height:9px;background-position:-47px -166px}
+.p_sp.page__gateway .cash_info + dl dd a .spr {width:5px;height:9px;background-position:-86px -133px}
+.page__gateway .sc_btm .abs + dl dt {font-size:14px}
+.page__gateway .sc_btm .abs + dl dt>span{display:inline-block;vertical-align:top;width:15px;height:10px;text-align:center;color:#ccc;}
+.page__gateway .sc_btm .abs + dl dd {font-size:14px;font-weight:bold}
+.p_sp.page__gateway .sc_btm .abs + dl dd {font-size:16px}
+
+.page__gateway .linker_bt{padding:4px 6px 2px;background-color:#f1f1f1;border-radius:3px;color:#777;font-size:11px}
+.page__gateway .bank_area .lst_bank{display:table;width:100%;height:100%}

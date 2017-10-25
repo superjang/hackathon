@@ -1,0 +1,21 @@
+@@include('smilepay/common/head.html', {
+    "page_name": "gateway",
+    "service_id": "smilepay"
+})
+<body id="app__id--smilepay" class="page__agreement">
+    @@include('smilepay/common/header.html', {
+        "page_name": "agreement"
+    })
+
+    <section id="app__content">
+        <div class="agreement">
+            @@include('smilepay/agreement/agreement.html')
+        </div>
+    </section>
+
+    @@include('smilepay/common/script.html')
+    <script src="../../../js/app/smilepay/main/base.js"></script>
+    <script src="../../../js/app/smilepay/agreement/validation.js"></script>
+
+</body>
+</html>
