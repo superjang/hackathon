@@ -1,0 +1,65 @@
+@@include('smilepay/common/head.html', {
+    "page_name": "list",
+    "service_id": "smilepay"
+})
+<body id="app__id--smilepay" class="page__linker_list">
+    @@include('smilepay/common/header.html', {
+        "page_name": "list"
+    })
+
+    @@include('smilepay/common/gnb.html')
+    <section id="app__content">
+        <!-- TODO
+            정렬 : 사이트별, 카테고리별
+            정렬 UI 상단고정 처리
+        -->
+        <div class="info__find_item">
+            <p class="text">
+                지마켓, 옥션, G9 사이트에서 진행중인 이벤트 리스트 입니다.
+                다양한 혜택과 상품으로 매력지수 UP! UP! UP!
+            </p>
+        </div>
+
+        <ul class="list__service_site">
+            <li class="item__service_site auction">
+                <a href="#" class="tab__ad_list">
+                    <span class="icon">
+                        <span class="ir">Auction</span>
+                    </span>
+                </a>
+            </li>
+            <li class="item__service_site gmarket on">
+                <a href="#" class="tab__ad_list">
+                    <span class="icon">
+                        <span class="ir">Gmarket</span>
+                    </span>
+                </a>
+            </li>
+            <li class="item__service_site g9">
+                <a href="#" class="tab__ad_list">
+                    <span class="icon">
+                        <span class="ir">G9</span>
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="box__list_vip auction">
+            @@include('smilepay/linker_list/list_event.html', {
+                "service_site": "auction"
+            })
+            @@include('smilepay/linker_list/list_event.html', {
+                "service_site": "gmarket"
+            })
+            @@include('smilepay/linker_list/list_event.html', {
+                "service_site": "g9"
+            })
+        </div>
+
+    </section>
+
+    @@include('smilepay/common/footer.html')
+    @@include('smilepay/common/script.html')
+    <script src="../../../js/app/smilepay/linker_list/base.js"></script>
+</body>
+</html>

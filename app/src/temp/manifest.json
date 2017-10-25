@@ -1,0 +1,25 @@
+{
+  "short_name": "SmileLinker",
+  "name": "EBAY",
+  "start_url": "/html/app/smilepay/page__intro.html?launcher=true",
+  "background_color": "#14173a",
+  "theme_color": "#243069",
+  "display": "fullscreen",
+  "icons": [{
+    "src": "https://developers.google.com/_static/d3eee48665/images/touch-icon.png?hl=ko",
+    "type": "image/png",
+    "sizes": "128x128"
+  }, {
+    "src": "https://developers.google.com/_static/d3eee48665/images/touch-icon.png?hl=ko",
+    "type": "image/png",
+    "sizes": "152x152"
+  }, {
+    "src": "https://developers.google.com/_static/d3eee48665/images/touch-icon.png?hl=ko",
+    "type": "image/png",
+    "sizes": "144x144"
+  }, {
+    "src": "https://developers.google.com/_static/d3eee48665/images/touch-icon.png?hl=ko",
+    "type": "image/png",
+    "sizes": "192x192"
+  }]
+}
