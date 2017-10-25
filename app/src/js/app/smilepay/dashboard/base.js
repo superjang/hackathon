@@ -31,8 +31,10 @@ var dashboardLoad = {
 		this.moveTopSection();
 	},
 	moveTopSection : function(){
-		console.log(1);
 		$('.basic_infomation').addClass('action');
+		setTimeout(function(){
+			cashGageCustom.setGageBar();
+		},600);
 	}
 }
 
@@ -54,7 +56,7 @@ var cashGageCustom = {
 		    radius = 49,
 		    circum = Math.PI * 2,
 		    start = Math.PI / -2, // Start position (top)
-		    finish = 77, // Finish (in %)
+		    finish = 40, // Finish (in %)
 		    curr = 0; // Current position (in %)
 
 		// CANVAS ANIMATION
@@ -84,11 +86,31 @@ var cashGageCustom = {
 		  if (curr < finish + 1) {
 		    // Recursive repeat this function until the end is reached
 		    requestAnimationFrame(function () {
-		      animate(circum * curr / 100 + start);
+		      animate(circum * curr / 50 + start);
 		    });
 		  }
 		}
 		animate();
+		this.priceAnimateFunc();
+	},
+	priceAnimateFunc : function(){
+		var target = $('.progress_percent .number');
+		var targetText = target.text();
+		var targetNumber = Number(targetText.replace(/[^0-9]/g,''));
+		Number.prototype.comma = function() {
+		    var a = this.toString().split(".");
+		    a[0] = a[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		    return a.join(".")
+		};
+		$({val : 0}).animate({val : targetNumber},{
+			duration : 1000,
+			step : function(){
+				target.text(Math.floor(this.val));
+			},
+			complete : function(){
+				target.text(Math.floor(this.val));
+			}
+		});
 	}
 }
 
