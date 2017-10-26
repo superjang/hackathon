@@ -66,7 +66,8 @@
                 title: selectItem.data('sns-title'),
                 description: selectItem.data('sns-description'),
                 image: selectItem.data('sns-image'),
-                url: selectItem.data('sns-url')
+                url: selectItem.data('sns-url'),
+                itemNumber: selectItem.data('sns-item-number')
             };
 
         snsData.url + '#' + JSON.stringify(snsData)
@@ -81,7 +82,7 @@
                         mobile_iframe: false,
                         action_properties: JSON.stringify({
                             object: {
-                                'og:url': snsData.url, //http://hkta18-w1.koreacentral.cloudapp.azure.com/html/app/smilepay/page__.html
+                                'og:url': 'http://hkta18-w1.koreacentral.cloudapp.azure.com/html/app/smilepay/page__visitVIP.html?dealNumber=' + snsData.itemNumber, // snsData.url, //http://hkta18-w1.koreacentral.cloudapp.azure.com/html/app/smilepay/page__.html
                                 'og:title': snsData.title,
                                 'og:description': snsData.description,
                                 'og:image': snsData.image
