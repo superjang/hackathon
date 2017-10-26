@@ -45,7 +45,7 @@ function layerPopup(msgText){
           console.log("나만됨");
           $('.basic_infomation .user_area .linker_cash .number').text('0');
           $('.progress_percent .number').text('0');
-
+        $('.progress').find('canvas').hide();
 
         }else{
 
