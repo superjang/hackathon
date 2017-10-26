@@ -43,7 +43,7 @@
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   background: #fff;
-  font-size: 1em;
+  font-size: 14px;
   border-radius: 2px;
   margin:0.5em;
 }
@@ -65,10 +65,9 @@ page__visit_buyfinish .card:after {
 
 .contents-header {
   position: relative;
-  height: 2.75em;
-  padding: 0 0.75em;
+  padding: 20px;
   color: #000000;
-  text-align: right;
+  text-align: left;
   overflow: hidden;
   background: #fff;
 }
@@ -78,7 +77,7 @@ page__visit_buyfinish .card:after {
 }
 
 .payed-info .info-table {
-  padding: 0.625em 0.75em;
+  padding: 10px 20px;
 }
 
 .info-table-item:before, .info-table-item:after {
@@ -87,7 +86,7 @@ page__visit_buyfinish .card:after {
 }
 
 .info-table-item-th {
-  font-size: 0.8125em;
+  font-size: 13px;
   float: left;
   width: 8.07692308em;
   color: #666666;
@@ -101,4 +100,60 @@ page__visit_buyfinish .card:after {
 
 .info-table + .info-table {
   border-top: 1px solid #ebebeb;
+}
+
+
+
+
+
+.page__visit_buyfinish .buy_title {
+  position: relative;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  font-size: 1em;
+  border-radius: 2px;
+  margin: 0.5em;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.page__visit_buyfinish .buy_title h2{
+  font-size: 16px;
+  font-weight: bold;
+  color: #451e75;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #451e75;
+  padding: 10px 20px;
+}
+.page__visit_buyfinish .buy_title p{
+  font-size: 14px;
+  line-height: 26px;
+  border-bottom: 1px solid #ddd;
+  margin: 20px;
+  padding: 20px 0;
+}
+.page__visit_buyfinish .buy_title p b{
+  font-weight: bold;
+}
+.page__visit_buyfinish .buy_title span{
+  font-size: 14px;
+  color: #db794e;
+  display: block;
+  line-height: 29px;
+  display: block;
+  margin: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.page__visit_buyfinish .buy_title .tip:after{content:"?";background: #6f7386;border-radius: 50%;width: 16px;height: 16px;line-height: 1;display: inline-block;font-size: 11px;vertical-align: middle;font-family: dotum;box-sizing: border-box;padding-top: 2px;margin-left: 2px;font-weight: bold;text-align: center;}
+.page__visit_buyfinish .buy_title .tip{display:inline-block;background: #d7d5d5;color: #fff;border-radius: 2px;padding: 2px 8px;line-height: 20px;padding-bottom: 5px;}
+
+.page__visit_buyfinish .buy_title button{
+  display: block;
+  background: #a192c5;
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  color: #fff;
 }
