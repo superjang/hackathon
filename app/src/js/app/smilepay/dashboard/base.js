@@ -94,12 +94,16 @@ var dashboardLoad = {
 			cashGageCustom.setGageBar();
 		},500);
 
-		if(linkerCount%2 == 0){
-			setTimeout(function(){
-				layerPopup("짝짝짝!!! <br>누적된 스마일캐시 <b>10000</b>원이<br>지급되었습니다");
-			},2000);
 
-		}
+
+        if(linkerCount !== 0) {
+            if (linkerCount % 2 == 0) {
+                setTimeout(function(){
+                    layerPopup("짝짝짝!!! <br>누적된 스마일캐시 <b>10000</b>원이<br>지급되었습니다");
+                },2000);
+            }
+        }
+
 	}
 }
 
