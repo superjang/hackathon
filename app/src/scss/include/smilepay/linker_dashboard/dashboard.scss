@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .page__dashboard_list{
-  background:#f1f1f1;
+  background:#eeeff4;
   .basic_infomation_wrap{
     overflow: hidden;
     position:relative;
@@ -38,9 +38,14 @@
         }
         .progress_percent{
           position:absolute;
-          top:35px;
+          top:32px;
           left:35px;
-          font-size:25px;
+          font-size:13px;
+          .number{
+            color:#000;
+            font-size: 30px;
+            padding-right:4px;
+          }
         }
         .progress:before {
           content: "";
@@ -91,6 +96,7 @@
         .infomation_list{
           li{
             padding:5px 0 0;
+            font-size: 13px;
           }
           li:first-child{padding:0}
         }
@@ -118,7 +124,7 @@
           display:block;
           height:50px;
           border-radius:4px;
-          font-size:20px;
+          font-size:13px;
           color:black;
           line-height:50px;
           text-align:center;
@@ -129,8 +135,9 @@
       }
       li.selected{
         a{
-          background:navy;
-          color:white;
+          background:$color_navi;
+          color:#fff;
+          font-size: 13px;
         }
       }
     }
