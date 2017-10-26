@@ -25,7 +25,7 @@
         width:110px;
         height:110px;
         border-radius:50%;
-        background:navy;
+        background: #ffa500;
         .progress{
           position: relative;
           width:110px;
@@ -159,6 +159,8 @@
               position:absolute;
               top:10px;
               left:10px;
+              font-size: 12px;
+              font-weight: bold;
             }
             dd{
               display:inline-block;
@@ -166,6 +168,7 @@
                 display:block;
                 width:30px;
                 font-size:13px;
+                text-decoration: underline;
               }
             }
           }

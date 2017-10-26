@@ -35,7 +35,7 @@ function layerPopup(msgText){
     popupHtml +=    '<p class="msg">'
     popupHtml +=         msgText
     popupHtml +=    '</p>'
-    popupHtml +=    '<button class="confirm">확인</button>'
+    popupHtml +=    '<a href="/html/app/smilepay/page__dashboard.html#share" class="confirm">확인</a>'
     popupHtml +=  '</div>';
     $('body').append(popupHtml);
     $("#layer_popup").addClass("active");

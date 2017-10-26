@@ -3,7 +3,25 @@
 <script src="../../../js/common/gnb.js"></script>
 
 <script>
+    var storage = {
+        setData: function(key, model){
+            if(!model){
+                console.log("저장할 데이터가 없습니다.");
+                return
+            }
+            localStorage.setItem(key ,JSON.stringify(model));
+        },
+        getData: function(storageName){
+            if(!storageName){
+                console.error('조회할 저장소 키값을 입력해 주세요.');
+            }
+
+            return JSON.parse(localStorage.getItem(storageName));
+        }
+    }
+
     $(document).ready(function() {
+        var model = {};
         $('.button__prev_page').on('click', function(e){
             e.preventDefault();
             history.back();
@@ -24,19 +42,54 @@
 
     $('.list__sns').on('click', '.button__share_sns', $.proxy(shareItem, this));
 
-    function shareItem(event){
-        var target = $(event.currentTarget),
-            snsType = target.data('sns-type'),
-            selectItem = target.parents('.vip__item'),
-            snsData = {
-                title: selectItem.data('sns-title'),
-                description: selectItem.data('sns-description'),
-                image: selectItem.data('sns-image'),
-                url: selectItem.data('sns-url')
-            };
+    function parseParms(str) {
+        var pieces = str.split("&"), data = {}, i, parts;
+        // process each query pair
+        for (i = 0; i < pieces.length; i++) {
+            parts = pieces[i].split("=");
+            if (parts.length < 2) {
+                parts.push("");
+            }
+            data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+        }
+        return data;
+    }
+
+    function getHashToString(){
+        return location.hash.slice(1);
+    }
+
+
+//    var dashboardRenderData = JSON.parse(localStorage.dashboard); // 랜더링 데이터
+var userUpdateModel = {
+    totalCache:0,
+    liveLinkerCount: 0
+};
+
+        function shareItem(event){
+            var target = $(event.currentTarget),
+                snsType = target.data('sns-type'),
+                selectItem = target.parents('.vip__item'),
+                snsData = {
+                    title: selectItem.data('sns-title'),
+                    description: selectItem.data('sns-description'),
+                    image: selectItem.data('sns-image'),
+                    url: selectItem.data('sns-url'),
+                    itemNumber: selectItem.data('sns-item-number')
+                };
+
 
         switch(snsType){
             case 'facebook' :
+                storage.setData('lastItem', snsData);
+                var prevUserInfo = storage.getData('userInfo');
+                if(prevUserInfo){
+                    userUpdateModel.totalCache += prevUserInfo.totalCache;
+                    userUpdateModel.liveLinkerCount += 1;
+                }
+
+                storage.setData('userInfo', userUpdateModel);
+                console.log("총" + storage.getData('userInfo').liveLinkerCount +"번 공유했습니다.")
                 FB.ui({
                         method: 'share_open_graph',
                         action_type: 'og.shares',
@@ -45,14 +98,14 @@
                         mobile_iframe: false,
                         action_properties: JSON.stringify({
                             object: {
-                                'og:url': snsData.url,
+                                'og:url': 'http://hkta18-w1.koreacentral.cloudapp.azure.com/html/app/smilepay/page__visitVIP.html?dealNumber=' + snsData.itemNumber, // snsData.url, //http://hkta18-w1.koreacentral.cloudapp.azure.com/html/app/smilepay/page__.html
                                 'og:title': snsData.title,
                                 'og:description': snsData.description,
                                 'og:image': snsData.image
                             }
                         })
                 }, function(response){
-                    alert('공유가 완료되었습니다. 부자되세요~');
+
                 });
                 break;
             case 'kakaotalk' :
@@ -63,7 +116,8 @@
         $('.box__share_sns.on').find('.button__share_list').trigger('click');
     }
 
-        $('.list__service_site .item__service_site').on('click', function(){
+        $('.list__service_site .item__service_site').on('click', function(e){
+            e.preventDefault();
             $('.list__service_site .item__service_site').removeClass('on')
             $(this).addClass('on');
 
@@ -81,5 +135,7 @@
 
         })
 
+
+//        'http://itempage3.auction.co.kr/detailview.aspx?itemno=' + itemNumber //B419464060
     });
 </script>
