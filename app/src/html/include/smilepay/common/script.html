@@ -81,15 +81,24 @@ var userUpdateModel = {
 
         switch(snsType){
             case 'facebook' :
-                storage.setData('lastItem', snsData);
+
                 var prevUserInfo = storage.getData('userInfo');
+
                 if(prevUserInfo){
-                    userUpdateModel.totalCache += prevUserInfo.totalCache;
-                    userUpdateModel.liveLinkerCount += 1;
+                    if(prevUserInfo.liveLinkerCount){
+                        userUpdateModel.liveLinkerCount = prevUserInfo.liveLinkerCount + 1;
+                        console.log("이전모델 있음")
+                    }else{
+                        userUpdateModel.liveLinkerCount = 1;
+                        console.log("이전모델 없음")
+                    }
+                }else{
+                    userUpdateModel.liveLinkerCount = 1;
+                    console.log("이전모델 없음")
                 }
 
                 storage.setData('userInfo', userUpdateModel);
-                console.log("총" + storage.getData('userInfo').liveLinkerCount +"번 공유했습니다.")
+                console.log(userUpdateModel.liveLinkerCount, "총" + storage.getData('userInfo').liveLinkerCount +"번 공유했습니다.")
                 FB.ui({
                         method: 'share_open_graph',
                         action_type: 'og.shares',

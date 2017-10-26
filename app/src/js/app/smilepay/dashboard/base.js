@@ -1,5 +1,12 @@
 var app = "dashboard";
-var linkerCount =  4 //   storage.getData('userInfo').liveLinkerCount;
+
+
+if(storage.getData('userInfo')){
+    var linkerCount = storage.getData('userInfo').liveLinkerCount;
+}else{
+    var linkerCount = 0;
+}
+
 
 
 var xline = ['오늘','2','3','4','5','6','7','8','9','10','11'];
@@ -45,13 +52,16 @@ var dashboardLoad = {
 			$('.basic_infomation .user_area .infomation_list .list_content .rank').text('골드');
 		}
 		$('.basic_infomation .user_area .infomation_list .list_content .number').text(linkerCount);
-		if(linkerCount%2 == 0){
-			$('.basic_infomation .user_area .linker_cash .number').text('10,000');
-			$('.progress_percent .number').text(100);
-		}else{
-			$('.basic_infomation .user_area .linker_cash .number').text('5,000');
-			$('.progress_percent .number').text(50);
-		}
+
+		if(linkerCount !== 0){
+            if(linkerCount%2 == 0){
+                $('.basic_infomation .user_area .linker_cash .number').text('10,000');
+                $('.progress_percent .number').text(100);
+            }else{
+                $('.basic_infomation .user_area .linker_cash .number').text('5,000');
+                $('.progress_percent .number').text(50);
+            }
+ 		}
 
         var cloneData = "";
         cloneData += ' <li> '
@@ -96,11 +106,13 @@ var dashboardLoad = {
 var cashGageCustom = {
 	setGageBar : function(){
 
-		if(linkerCount%2 == 0){
-			var checkValue = 50;
-		}else{
-			var checkValue = 25;
-		}
+        if(linkerCount !== 0) {
+            if (linkerCount % 2 == 0) {
+                var checkValue = 50;
+            } else {
+                var checkValue = 25;
+            }
+        }
 
 		// CANVAS
 		var canvas = document.getElementById('bar'),
