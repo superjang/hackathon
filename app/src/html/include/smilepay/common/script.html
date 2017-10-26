@@ -42,7 +42,7 @@
                         action_type: 'og.shares',
                         display: 'popup',
                         hashtag: '#SmileLinker',
-                        mobile_iframe: true,
+                        mobile_iframe: false,
                         action_properties: JSON.stringify({
                             object: {
                                 'og:url': snsData.url,
@@ -52,7 +52,7 @@
                             }
                         })
                 }, function(response){
-
+                    alert('공유가 완료되었습니다. 부자되세요~');
                 });
                 break;
             case 'kakaotalk' :
