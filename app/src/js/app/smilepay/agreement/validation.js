@@ -49,7 +49,7 @@ function layerPopup(msgText){
 
 $(document).ready(function(){
 
-    openCheck();
+    if($(".agreement").length > 0 ) openCheck();
 
 
 

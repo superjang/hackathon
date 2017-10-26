@@ -1,5 +1,5 @@
 var app = "dashboard";
-var linkerCount = 3 //storage.getData('userInfo').liveLinkerCount;
+var linkerCount = storage.getData('userInfo').liveLinkerCount;
 
 
 var xline = ['오늘','2','3','4','5','6','7','8','9','10','11'];
@@ -45,7 +45,7 @@ var dashboardLoad = {
 			$('.basic_infomation .user_area .infomation_list .list_content .rank').text('골드');
 		}
 		$('.basic_infomation .user_area .infomation_list .list_content .number').text(linkerCount);
-		if(linkerCount/2 == 0){
+		if(linkerCount%2 == 0){
 			$('.basic_infomation .user_area .linker_cash .number').text('10,000');
 			$('.progress_percent .number').text(100);
 		}else{
@@ -56,13 +56,17 @@ var dashboardLoad = {
 	moveTopSection : function(){
 		setTimeout(function(){
 			cashGageCustom.setGageBar();
+            if(linkerCount%2 == 0){
+                layerPopup("짝짝짝!!! <br>누적된 스마일캐시 <b>10000</b>원이<br>지급되었습니다");
+            }
+
 		},500);
 	}
 }
 
 var cashGageCustom = {
 	setGageBar : function(){
-		if(linkerCount/2 == 0){
+		if(linkerCount%2 == 0){
 			var checkValue = 50;
 		}else{
 			var checkValue = 25;
