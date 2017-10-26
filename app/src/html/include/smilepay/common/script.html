@@ -92,6 +92,9 @@ var userUpdateModel = {
                         userUpdateModel.liveLinkerCount = 1;
                         console.log("이전모델 없음")
                     }
+                }else{
+                    userUpdateModel.liveLinkerCount = 1;
+                    console.log("이전모델 없음")
                 }
 
                 storage.setData('userInfo', userUpdateModel);
