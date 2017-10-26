@@ -41,10 +41,23 @@ function layerPopup(msgText){
     $("#layer_popup").addClass("active");
 
     $("#layer_popup .confirm").on("click", function() {
+        if($('body').hasClass('page__dashboard_list')) {
+          console.log("나만됨");
+          $('.basic_infomation .user_area .linker_cash .number').text('0');
+          $('.progress_percent .number').text('0');
+
+
+        }else{
+
+        }
         $(this).closest("#layer_popup").remove();
         $("#dimmed").remove();
 
     })
+
+
+
+
 }
 
 $(document).ready(function(){

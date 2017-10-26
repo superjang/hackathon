@@ -1,5 +1,5 @@
 var app = "dashboard";
-var linkerCount =   storage.getData('userInfo').liveLinkerCount;
+var linkerCount =  4 //   storage.getData('userInfo').liveLinkerCount;
 
 
 var xline = ['오늘','2','3','4','5','6','7','8','9','10','11'];
@@ -95,6 +95,7 @@ var dashboardLoad = {
 
 var cashGageCustom = {
 	setGageBar : function(){
+
 		if(linkerCount%2 == 0){
 			var checkValue = 50;
 		}else{
