@@ -140,6 +140,11 @@
             }else if(activeTab === 'list'){
                 $('.linker_tab .list a').click();
             }
+
+            if(storage.getData('userInfo').liveLinkerCount ){
+                alert("총" + storage.getData('userInfo').liveLinkerCount +"번 공유했습니다.")
+            }
+
         })
     </script>
 </body>
