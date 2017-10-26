@@ -21,5 +21,5 @@ $(document).ready(function(){
     //request iframe url
     var paramUrl = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
     var itemNumber = paramUrl[0].split('dealNumber=')[1];
-    $('#vip_frame').attr('src','http://mitem.auction.co.kr/vip?itemNo='+itemNumber )
+    if(itemNumber != undefined ) $('#vip_frame').attr('src','http://mitem.auction.co.kr/vip?itemNo='+itemNumber )
 });
