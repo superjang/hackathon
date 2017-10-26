@@ -52,15 +52,44 @@ var dashboardLoad = {
 			$('.basic_infomation .user_area .linker_cash .number').text('5,000');
 			$('.progress_percent .number').text(50);
 		}
+
+        var cloneData = "";
+        cloneData += ' <li> '
+        cloneData += ' <div class="image_box">'
+        cloneData += '    <img src="http://image.auction.co.kr/itemimage/12/ed/26/12ed264b66.jpg" alt="" class="item_image" />'
+        cloneData += '    <span class="sns_icon"><img src="http://cdn4.iconfinder.com/data/icons/miu-gloss-social/60/facebook-512.png" alt="페이스북 공유"></span>'
+        cloneData += '    </div>'
+        cloneData += '    <span class="date">2017.10.25 16:00:00</span>'
+        cloneData += ' <p class="item_name">'
+        cloneData += '    <span class="market">[지마켓]</span>'
+        cloneData += '    <span class="item">해외 캐릭터 인형</span>'
+        cloneData += '</p>'
+        cloneData += '<div class="status_infomation">'
+        cloneData += '    <span class="state">지급</span>'
+        cloneData += '    <span class="cashback">5,000</span><span class="won">원</span>'
+        cloneData += ' </div>'
+        cloneData += '</li>' ;
+
+
+       	console.log(cloneData)
+        $('.linker_list').empty();
+      	 for( var i=1; i <= parseInt(linkerCount) ; i++ ){
+        	console.log("for");
+            $('.linker_list').append(cloneData);
+
+        }
 	},
 	moveTopSection : function(){
 		setTimeout(function(){
 			cashGageCustom.setGageBar();
-            if(linkerCount%2 == 0){
-                layerPopup("짝짝짝!!! <br>누적된 스마일캐시 <b>10000</b>원이<br>지급되었습니다");
-            }
-
 		},500);
+
+		if(linkerCount%2 == 0){
+			setTimeout(function(){
+				layerPopup("짝짝짝!!! <br>누적된 스마일캐시 <b>10000</b>원이<br>지급되었습니다");
+			},2000);
+
+		}
 	}
 }
 
