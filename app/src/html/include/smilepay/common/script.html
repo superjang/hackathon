@@ -93,7 +93,7 @@ var userUpdateModel = {
                 }
 
                 storage.setData('userInfo', userUpdateModel);
-                console.log("총" + storage.getData('userInfo').liveLinkerCount +"번 공유했습니다.")
+                console.log(userUpdateModel.liveLinkerCount, "총" + storage.getData('userInfo').liveLinkerCount +"번 공유했습니다.")
                 FB.ui({
                         method: 'share_open_graph',
                         action_type: 'og.shares',
