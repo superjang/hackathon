@@ -39,8 +39,10 @@
         .progress_percent{
           position:absolute;
           top:32px;
-          left:35px;
+          left:0;
+          width:100%;
           font-size:13px;
+          text-align:center;
           .number{
             color:#000;
             font-size: 30px;
